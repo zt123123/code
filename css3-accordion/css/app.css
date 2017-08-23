@@ -1,0 +1,11 @@
+.shou{margin: 0 auto;width: 750px;height: 300px;border: 1px solid #fff;box-shadow: 0px 0px 10px #f33;}
+.shou ul{width: 750px;height: 300px;margin: 0;padding: 0;overflow: hidden;box-sizing: border-box;}
+.shou ul li{width: 150px;height: 300px;float: left;list-style: none;transition: all 0.5s ease-out;border: 1px solid #fff;box-sizing: border-box;}
+.shou ul li img{height:100%}
+.shou ul li:nth-child(1){background-color: green;}
+.shou ul li:nth-child(2){background-color: yellow;}
+.shou ul li:nth-child(3){background-color: red;}
+.shou ul li:nth-child(4){background-color: pink;}
+.shou ul li:nth-child(5){background-color: purple;}
+.shou :hover li{width: 112px;cursor: pointer;}
+.shou ul li:hover{width: 300px;cursor: pointer;}
