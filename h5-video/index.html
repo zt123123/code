@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	</head>
+
+	<body>
+		<div class="box">
+			<div>
+				<video src="./mp4/test.mp4" width="1024" height="576" id="video"></video>
+			</div>
+			<div class="control">
+				<input type="button" id="play" value="" onclick="play()" />
+				<input type="button" id="muted" value="" onclick="muted()" />
+				<span id="videolength"></span>
+				<span id="nowlength">00:00:00</span>
+				<input type="range" name="timerange" id="timerange" value="0" min="0" max="600" step="1" onchange="changetime()" />
+				<input type="range" name="volumerange" id="volumerange" value="50" min="0" max="100" step="10" onchange="changevolume()"/>
+				<input type="button" name="full" id="full" value="" onclick="fullscreen()"/>
+
+			</div>
+		</div>
+	</body>
+	
+<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+</html>
