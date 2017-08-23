@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/app.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<script src="../js/template.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script src="../js/zepto.min.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/myScroll.js" ></script>
+		<title>宏业楼停车场</title>
+		<style>
+			#carport {
+				background: transparent;
+				position: absolute;
+				right: 2px;
+				top: 646px;
+			}
+			
+			.fix {
+				left: 0px;
+			}
+			
+			.btn {
+				width: 15%;
+			}
+			
+			.btn-detail {
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="park-income">
+			<div class="back fl">
+				<img src="../img/icon_title_retrun_h.png" />
+			</div>
+			<div class="title fl">
+				<h3>宏业楼停车场</h3>
+			</div>
+		</div>
+
+		<div id="wrapper">
+
+		</div>
+		<script type="text/html" id="tpl">
+			<div id="scroller">
+				<div id="pullDown">
+					<span class="pullDownIcon"></span>
+					<span class="pullDownLabel">下拉刷新...</span>
+				</div>
+				<div class="news-lists" id="news-lists">
+					<div class="container">
+						<div class="income bg-red">
+							<div class="today">今日收入</div>
+							<div class="money">162.00元</div>
+						</div>
+						<div class="member">
+							<div class="pos parking">
+								<img class="fl" src="../img/icon_park_income.png" />
+								<div class="posspan content-r fl">
+									<div class="txt-cen">
+										<span>停车收入</span>
+										<span>78.00元</span>
+									</div>
+								</div>
+							</div>
+							<div class="pos payment">
+								<img class="fl" src="../img/icon_member_income.png" />
+								<div class="posspan content-r fl">
+									<div class="txt-cen">
+										<span>会员缴费</span>
+										<span>0.00元</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="user clear sentry">
+							<img class="fl" src="../img/icon_sentry_box_info.png" />
+							<div class="content-r fl">
+								<span>停岗</span>
+								<span>停岗：1</span>
+							</div>
+						</div>
+						<div class="user clear">
+							<img class="fl" src="../img/icon_member_count.png" />
+							<div class="content-r fl">
+								<span>会员</span>
+								<span>当前停车：12&nbsp;本月新增：2&nbsp;总会员：78</span>
+							</div>
+						</div>
+						<div class="collector clear">
+							<img class="fl" src="../img/icon_toll_info.png" />
+							<div class="content-r fl">
+								<span>收费员</span>
+								<span>当前上班：3&nbsp;&nbsp;总收费员：2</span>
+							</div>
+						</div>
+						<div class="user clear flow">
+							<img class="fl" src="../img/icon_today_water_info.png" />
+							<div class="content-r fl" id="unusual">
+								<span>今日流水</span>
+								<span>进场：148&nbsp;&nbsp;出场：137</span>
+							</div>
+							<div class="btn-unusual fl">
+								异常(1)
+							</div>
+						</div>
+						<div class="park">
+							<div class="line fl"></div>
+							<span>停车场：1/1</span>
+						</div>
+						<div id="chart" style="background: #fff;position: relative;">
+							<div id="pie1" class="data">
+
+							</div>
+							<div class="btn" id="carport" style="position: absolute;right: 20px;top: 0;width:auto;">
+								<div class="btn-detail" style="width: auto;padding: 0 8px;font-size: 16px;">
+									车位管理
+								</div>
+							</div>
+						</div>
+						<div class="park">
+							<div class="line fl"></div>
+							<span>今日停车分析</span>
+						</div>
+						<div class="car-info">
+							<div class="car-detail clear">
+								<ul id="analysis">
+									<li>会员车：50辆<span class="fr">临时车：98辆</span></li>
+									<li>现金：81笔<span class="fr">金额：158.00</span></li>
+									<li>电子支付：0笔<span class="fr">金额：0.00</span></li>
+									<li>抵用卷：0笔<span class="fr">金额：0.00</span></li>
+									<li>折扣卷：0笔<span class="fr">金额：0.00</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="pullUp">
+					<span class="pullUpIcon"></span>
+					<span class="pullUpLabel">上拉加载更多...</span>
+				</div>
+			</div>
+		</script>
+		<script>
+			var data = {
+
+			}
+			template.helper("formate", function(number) {
+				return number.toFixed(2);
+			});
+			var html = template("tpl", data);
+
+			$("#wrapper").html(html);
+		</script>
+		<script src="../js/charts.js"></script>
+		<script src="../js/public.js"></script>
+		<script>
+			//			$.ajax({
+			//				url:'',
+			//				type:'post',
+			//				dataType:'json',
+			//				success:function(data){
+			//					var html = template('in', data);
+			//					document.getElementById('income').innerHTML = html;
+			//				},
+			//				error:function(err){
+			//					console.log(err);
+			//				}
+			//			});
+			var data = {
+				todayMoney: 30,
+				parkMoney: 78,
+				memberMoney: 0,
+				nowCar: 12,
+				newMember: 2,
+				allMember: 78,
+				nowCollector: 3,
+				allCollector: 2
+			}
+		</script>
+		<script>
+			drawPie("pie1");
+			jump(".parking", "park");
+			jump(".payment", "../member/pay");
+			jump(".user", "../member/members");
+			jump(".sentry", "sentry");
+			jump(".collector", "../toll/collector");
+			jump(".flow", "park_flow");
+
+			jump("#carport", "carport");
+			back(".back");
+		</script>
+	</body>
+
+</html>

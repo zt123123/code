@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/app.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<script src="../js/template.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script src="../js/zepto.min.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/myScroll.js" ></script>
+		<title>办理会员</title>
+		<style>
+			body{
+				background-color: #fff;
+			}
+			#blue-line{
+				line-height: 30px;
+			}
+			#blue-line img{
+				margin-top: 5px;
+			}
+			#blue-line div{
+				margin-top: 0px;
+				background: #3297dd;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="park-income">
+				<div class="back fl">
+					<img src="../img/icon_title_retrun_h.png" />
+				</div>
+				<div class="title fl">
+					<h3>流水分析</h3>
+				</div>
+			</div>
+			<div class="park mt0 border-none back-color-dark">
+				<div class="line fl"></div>
+				<span>对比时段</span>
+				<span>2017-05-11<span style="color: #898989;margin: 0 5px;">到</span>2017-05-11</span>
+			</div>
+			<div id="blue-line" class="park mt0 border-none back-color-dark">
+				<div class="line fl"></div>
+				<span>分析时段</span>
+				<span>0:00<span style="color: #898989;margin: 0 5px;">到</span>23:59</span>
+				<img class="fr" src="../img/query_btn.png" />
+			</div>
+			<div id="line" style="height: 400px;">
+				
+			</div>
+		</div>
+		 <!--<script src="../js/charts.js"></script>--> 
+		<script src="../js/public.js"></script>
+		<script>
+			back(".back");
+		</script>
+	</body>
+
+</html>

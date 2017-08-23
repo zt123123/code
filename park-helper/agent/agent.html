@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/app.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<script src="../js/template.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script src="../js/zepto.min.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/myScroll.js" ></script>
+		<title>管理端3.0</title>
+	</head>
+
+	<body>
+		<div class="top">
+			管理端3.0
+			<img id="setting" src="../img/icon_title_set_h.png" />
+		</div>
+		<div class="slide-bar">
+			<h3>宏业楼</h3>
+			<ul>
+				<li><i class="icon updata"></i><a href="#">检查更新</a></li>
+				<li><i class="icon idea"></i><a href="#">意见反馈</a></li>
+				<li><i class="icon about"></i><a href="#">关于</a></li>
+				<li><i class="icon exit"></i><a href="#">退出</a></li>
+			</ul>
+		</div>
+		<div id="wrapper">
+
+		</div>
+
+		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				var height = $(".container").outerHeight;
+				var flag = false;
+				$("#setting").click(function() {
+					if (!flag) {
+						$(".container").css("left", "-50%");
+						$(".top").css("left", "-50%");
+						$(".slide-bar").css("left", "50%");
+						$(".slide-bar").addClass("side-bar-on");
+						flag = !flag;
+					} else {
+						$(".slide-bar").css("left", "100%");
+						$(".slide-bar").removeClass("side-bar-on");
+						$(".container").css("left", "0");
+						$(".top").css("left", "0");
+
+						flag = !flag;
+					}
+				});
+			})
+		</script>
+		<script type="text/html" id="tpl">
+			<div id="scroller">
+				<div id="pullDown">
+					<span class="pullDownIcon"></span>
+					<span class="pullDownLabel">下拉刷新...</span>
+				</div>
+				<div class="news-lists" id="news-lists">
+					<div class="container">
+						<div class="income">
+							<div class="today fs-14">今日收入</div>
+							<div class="money fs-16">{{formate(todayMoney)}}元</div>
+						</div>
+						<div class="member">
+							<div class="pos parking">
+								<img class="fl" src="../img/icon_park_income.png" />
+								<div class="posspan content-r fl">
+									<div class="txt-cen" id="txt-cen1">
+										<span class="fs-14">停车收入</span>
+										<span class="fs-12">{{formate(parkMoney)}}元</span>
+									</div>
+								</div>
+							</div>
+							<div class="pos payment">
+								<img class="fl" src="../img/icon_member_income.png" />
+								<div class="posspan content-r fl">
+									<div class="txt-cen" id="txt-cen2">
+										<span class="fs-14">会员缴费</span>
+										<span class="fs-12">{{formate(memberMoney)}}元</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="user clear pos">
+							<img class="fl" src="../img/icon_member_count.png" />
+							<div class="content-r fl posspan" id="member">
+								<span class="fs-14">会员</span>
+								<span class="fs-12">当前停车：{{nowCar}}&nbsp;本月新增：{{newMember}}&nbsp;总会员：{{allMember}}</span>
+							</div>
+						</div>
+						<div class="collector clear pos">
+							<img class="fl" src="../img/icon_toll_info.png" />
+							<div class="content-r fl posspan" id="collector">
+								<span class="fs-14">收费员</span>
+								<span class="fs-12">当前上班：3&nbsp;&nbsp;总收费员：2</span>
+							</div>
+						</div>
+						<div class="park">
+							<div class="line fl"></div>
+							<span class="fs-14">停车场：1/1</span>
+						</div>
+						<div class="show-data">
+							<div class="abnormal">
+								<img src="../img/bg_park_abnormal.png" />
+								<span>2</span>
+							</div>
+							<div id="pie" class="data"></div>
+						</div>
+					</div>
+				</div>
+				<div id="pullUp">
+					<span class="pullUpIcon"></span>
+					<span class="pullUpLabel">上拉加载更多...</span>
+				</div>
+			</div>
+		</script>
+		<script>
+			//			$.ajax({
+			//				url:'',
+			//				type:'post',
+			//				dataType:'json',
+			//				success:function(data){
+			//					var html = template('in', data);
+			//					document.getElementById('income').innerHTML = html;
+			//				},
+			//				error:function(err){
+			//					console.log(err);
+			//				}
+			//			});
+			var data = {
+				todayMoney: 30,
+				parkMoney: 78,
+				memberMoney: 0,
+				nowCar: 12,
+				newMember: 2,
+				allMember: 78,
+				nowCollector: 3,
+				allCollector: 2
+			}
+			template.helper("formate", function(number) {
+				return number.toFixed(2);
+			});
+			var html = template("tpl", data);
+
+			$("#wrapper").html(html);
+			
+
+
+		</script>
+		<script src="../js/charts.js"></script>
+		<script>
+			$(function(){
+				drawPie("pie");
+//				var abnoemal=document.querySelector(".abnormal");
+//				abnoemal.onclick=function(e){
+//					e.stopPropagation();
+//					alert("000");
+//				}
+////				$(".abnormal").click(function(e){
+////					e.stopPropagation();
+////					window.location.href="../park/unusual.html";
+////				})
+				jump(".parking", "../park/park");
+				jump(".payment", "../member/pay");
+				jump(".user", "../member/members");
+				jump(".abnormal", "../park/unusual");
+				jump(".show-data", "../park/data");
+				jump(".collector", "../toll/collector");
+				jump("#pie1", "../park/data");
+			})
+		</script>
+	</body>
+
+</html>

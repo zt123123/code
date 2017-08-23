@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/app.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<script src="../js/template.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script src="../js/zepto.min.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/myScroll.js"></script>
+		<title>岗亭列表</title>
+	</head>
+
+	<body>
+		<div class="park-income">
+			<div class="back fl">
+				<img src="../img/icon_title_retrun_h.png" />
+			</div>
+			<div class="title fl">
+				<h3>岗亭列表</h3>
+			</div>
+		</div>
+		<div id="wrapper">
+
+		</div>
+		<!--<script src="js/charts.js"></script>-->
+		<script src="../js/public.js"></script>
+		<script type="text/html" id="tpl">
+			<div id="scroller">
+				<div id="pullDown">
+					<span class="pullDownIcon"></span>
+					<span class="pullDownLabel">下拉刷新...</span>
+				</div>
+				<div class="news-lists" id="news-lists">
+					<div class="container clearfix">
+						<div class="sentry-list">
+							<div class="sentry-item">
+								<img class="fl" src="../img/icon_sentry_box_info_select.png" />
+								<div class="sentry-content fl">
+									<span>出口岗亭</span>
+									<span>(入口1)</span>
+								</div>
+							</div>
+							<div class="sentry-item clear">
+								<img class="fl" src="../img/icon_sentry_box_info_select.png" />
+								<div class="sentry-content fl">
+									<span>出口岗亭</span>
+									<span>(入口1)</span>
+								</div>
+							</div>
+							<div class="sentry-item clear">
+								<img class="fl" src="../img/icon_sentry_box_info_select.png" />
+								<div class="sentry-content fl">
+									<span>出口岗亭</span>
+									<span>(入口1)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="pullUp">
+					<span class="pullUpIcon"></span>
+					<span class="pullUpLabel">上拉加载更多...</span>
+				</div>
+			</div>
+		</script>
+		<script>
+			var data = {
+
+			}
+			template.helper("formate", function(number) {
+				return number.toFixed(2);
+			});
+			var html = template("tpl", data);
+
+			$("#wrapper").html(html);
+		</script>
+		<script>
+			back(".back");
+		</script>
+	</body>
+
+</html>

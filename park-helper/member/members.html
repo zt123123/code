@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/app.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/app.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<script src="../js/template.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script src="../js/zepto.min.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/myScroll.js"></script>
+		<title>会员</title>
+	</head>
+
+	<body>
+		<div class="park-income">
+			<div class="back fl">
+				<img src="../img/icon_title_retrun_h.png" />
+			</div>
+			<div class="title fl">
+				<h3>会员</h3>
+			</div>
+			<div class="choose fl">
+				<img src="../img/icon_title_select_h.png" />
+			</div>
+		</div>
+		<div id="wrapper">
+
+		</div>
+
+		<!--<script src="js/charts.js"></script>-->
+		<script src="../js/public.js"></script>
+		<script type="text/html" id="tpl">
+			<div id="scroller">
+				<div id="pullDown">
+					<span class="pullDownIcon"></span>
+					<span class="pullDownLabel">下拉刷新...</span>
+				</div>
+				<div class="news-lists" id="news-lists">
+					<div class="container clearfix">
+						<div class="member">
+							<div class="pos parking">
+								<img class="fl" src="../img/icon_member_count.png" />
+								<div class="posspan content-r fl">
+									<div class="txt-cen" id="txt-cen1">
+										<span>会员总数</span>
+										<span>78</span>
+									</div>
+								</div>
+							</div>
+							<div class="pos payment">
+								<img class="fl" src="../img/icon_member_add.png" />
+								<div class="posspan content-r fl">
+									<div class="txt-cen" id="txt-cen2">
+										<span>本月新增</span>
+										<span>5</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="park">
+							<div class="line fl"></div>
+							<span>当前车辆：24辆</span>
+						</div>
+
+						<div id="car-info">
+							<div class="car-info">
+								<div class="fl car-nunber">
+									鄂A11111
+								</div>
+								<div class="fl expire-time">
+									到期时间：2017-06-01
+								</div>
+								<div class="car-detail clear">
+									<ul>
+										<li>姓名：张三<span class="fr">停车场会员</span></li>
+										<li>手机：12345678910</li>
+										<li>停车场：宏业楼停车场</li>
+										<li>进场时间：2017-05-11 13:22:41</li>
+										<li>停车时长：4小时39分钟</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div id="pullUp">
+					<span class="pullUpIcon"></span>
+					<span class="pullUpLabel">上拉加载更多...</span>
+				</div>
+			</div>
+			<div class="btn fix">
+				<div class="btn-detail">
+					办理会员
+				</div>
+			</div>
+		</script>
+		<script>
+			var data = {
+
+			}
+			template.helper("formate", function(number) {
+				return number.toFixed(2);
+			});
+			var html = template("tpl", data);
+
+			$("#wrapper").html(html);
+			
+			jump(".parking","member_list");
+			jump(".payment","member_list");
+			jump(".btn-detail","handle_vip");
+			back(".back");
+		</script>
+	</body>
+
+</html>

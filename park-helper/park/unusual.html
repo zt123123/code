@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/app.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<script src="../js/template.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script src="../js/zepto.min.js"></script>
+		<script src="../js/iscroll.js"></script>
+		<script src="../js/myScroll.js"></script>
+		<title>异常列表</title>
+	</head>
+
+	<body>
+		<div class="park-income">
+			<div class="back fl">
+				<img src="../img/icon_title_retrun_h.png" />
+			</div>
+			<div class="title fl">
+				<h3>异常列表</h3>
+			</div>
+		</div>
+		<div id="wrapper">
+
+		</div>
+		<script src="../js/public.js"></script>
+		<script type="text/html" id="tpl">
+			<div id="scroller">
+				<div id="pullDown">
+					<span class="pullDownIcon"></span>
+					<span class="pullDownLabel">下拉刷新...</span>
+				</div>
+				<div class="news-lists" id="news-lists">
+					<div class="container clearfix">
+						<div class="park" style="margin-top: 0px;">
+							<div class="line fl"></div>
+							<span>收入统计:</span>
+							<span>2017-05-11到2017-05-11</span>
+							<img class="fr" src="../img/query_btn.png" />
+						</div>
+						<div class="car-info h120">
+							<div class="car-detail clear">
+								<div class="flow-info fl">
+									<div class="flow-car">
+										鄂A11111
+									</div>
+								</div>
+								<ul id="flow-data" class="fl">
+									<li><span>进场时间：2017-05-11&nbsp;21:33</span></li>
+									<li><span>离场时间：2017-05-11&nbsp;21:36</span></li>
+									<li><span>停车时长：3分钟</span></li>
+								</ul>
+								<div class="flow-money">
+									<span class="fz-13"><img class="warning-pic" src="../img/icon_abnormal_small.png"/>人工校验&nbsp;&nbsp;未找到入场记录异常放行</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="pullUp">
+					<span class="pullUpIcon"></span>
+					<span class="pullUpLabel">上拉加载更多...</span>
+				</div>
+			</div>
+		</script>
+		<script>
+			var data = {
+
+			}
+			template.helper("formate", function(number) {
+				return number.toFixed(2);
+			});
+			var html = template("tpl", data);
+
+			$("#wrapper").html(html);
+		</script>
+		<script>
+			back(".back");
+		</script>
+	</body>
+
+</html>
