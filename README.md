@@ -4,7 +4,7 @@
 1.首先安装Nodejs环境（已安装可忽略此步骤）
 [NodeJs下载](https://nodejs.org/en/download/)
 安装步骤较简单，直接傻瓜式下一步，安装完成后，测试安装是否成功，命令行输入
-`node -v`
+> node -v
 
 出现版本号说明安装成功
 
