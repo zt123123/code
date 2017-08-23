@@ -1,0 +1,105 @@
+body{
+background-color: #e7e7e7;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center center;
+}
+#show{
+position: absolute;
+right: 10px;
+top: 10px;
+opacity: 0;
+animation: showpic 0.5s ease-out infinite;
+}
+#load{
+animation: load 0.7s linear infinite;
+}
+.ball{
+margin-left: 100px;
+padding: 0;
+width: 100px;height: 20px;
+position: relative;
+}
+.ball li{
+float: left;
+margin: 0;
+padding: 0;
+list-style: none;
+width: 20px;
+height: 20px;
+border-radius: 20px;
+background-color: #fff;
+}
+.ball li:nth-of-type(1){background-color: blue;position: absolute; top:0px;left: -50px; animation: left 1s linear infinite;}
+.ball li:nth-of-type(2),.ball li:nth-of-type(3),.ball li:nth-of-type(4){background-color: skyblue;}
+.ball li:nth-of-type(5){background-color: blue;position: absolute; top:0px;right: 20px; animation: right 1s linear infinite;}
+@keyframes showpic{
+from{width: 500px;height: 500px;}
+to{width: 100px;height: 100px;opacity: 1;}
+}
+
+@keyframes load{
+from{transform: rotateZ(0deg);}
+to{transform: rotateZ(360deg);}
+}
+@keyframes left{
+0%{left: -50px;}
+20%{left: -22px;}
+40%{left: -22px;}
+60%{left: -22px;}
+80%{left: -22px;}
+100%{left: -50px;}
+} 
+@keyframes right{
+0%{right: 20px;}
+20%{right: 20px;}
+40%{right: -8px;}
+60%{right: -8px;}
+80%{right: 20px;}
+100%{right: 20px;}
+}
+.battery{width: 70px;height: 120px;border: 1px solid #0f3;border-radius: 3px;position: relative;}
+.in{transition: all 2s ; width: 60px;height: 10px;background-color: #0f3;position: absolute;bottom: 5px;left: 5px;animation: charge 3s linear infinite 0.5s;}
+@keyframes charge{
+from{height: 10px;}
+to{height: 110px;}
+}
+.wrap{width: 70px;height: 70px;}
+.battery1{width: 70px;height: 70px;border: 1px solid #0f3;border-radius: 50%;position: relative;z-index: 10;}
+.in1{transition: all 2s ; width: 60px;height: 60px;background-color: #0f3;position: absolute;left: 0px;top: 60px;animation: charge1 3s linear infinite 0.5s;}
+.in2{width: 60px;height: 60px;border-radius: 50%; border: 1px solid #0f3; top: 4px;left: 4px;position: absolute;overflow: hidden;}
+@keyframes charge1{
+from{top: 60px}
+to{top: 0px}
+}
+.process{
+position: relative;
+width: 500px;
+height: 10px;
+background: rgba(0,0,0,.5);
+border-radius: 5px;
+}
+.pro{
+position: absolute;
+width: 15px;
+height: 10px;
+background: #0f3;
+border-radius: 5px;
+animation: process 5s linear infinite 0.5s;
+}
+.ball1{
+border-radius: 50%;
+position: absolute;
+left: 10px;
+top: -5px;
+width: 20px;height: 20px;background-color: #0f3;
+animation: process1 5s linear infinite 0.5s;
+}
+@keyframes process{
+from{width: 10px}
+to{width: 500px}
+}
+@keyframes process1{
+from{left: 10px;}
+to{left: 480px;}
+}
