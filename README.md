@@ -1,5 +1,18 @@
 # 后台管理系统
 工作之余写的一个小项目，主要是UI界面的构建，业务逻辑需要自己实现
+
+## image（项目截图）
+### 首页
+![jspangAdmin](https://zt123123.github.io/test/img/5.png)
+### 店铺
+![jspangAdmin](https://zt123123.github.io/test/img/1.png)
+### 商品
+![jspangAdmin](https://zt123123.github.io/test/img/2.png)
+### 图表
+![jspangAdmin](https://zt123123.github.io/test/img/3.png)
+### 表格
+![jspangAdmin](https://zt123123.github.io/test/img/5.png)
+
 ***
 1.首先安装Nodejs环境（已安装可忽略此步骤）
 [NodeJs下载](https://nodejs.org/en/download/)
