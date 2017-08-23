@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea id="message" name="" rows="10" cols="60"></textarea>
+		<br />
+		<input type="button" id="" value="保存" onclick="saveData()"/>
+		<input type="button" id="" value="读取" onclick="loadData()"/>
+		<input type="button" id="" value="清除" onclick="cleanData()"/>
+		<hr />
+		<div id="data"></div>
+	</body>
+	
+		<script type="text/javascript">
+		
+			function  saveData() {
+				var time=new Date();
+				time=time.toLocaleString();
+				var str=document.getElementById('message').value;
+				localStorage.setItem(time,str);
+				loadData();
+			}
+			function loadData () {
+				var data=document.getElementById('data');
+				var result="<table border='1'>"
+				for (var i=0;i<localStorage.length;i++) {
+					var key=localStorage.key(i);				
+					var content=localStorage.getItem(key);
+					result+="<tr><td>"+(i+1)+"</td>"+"<td>"+content+"</td><td>"+key+"</td></tr>";
+				}	
+				result+="</table>";
+				console.log(result);
+				data.innerHTML=result;
+			}
+			function cleanData () {
+				localStorage.clear();
+				loadData();
+			}
+	</script>
+</html>
