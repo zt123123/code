@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box {
+				width: 200px;
+				height: 50px;
+				border-radius: 50%/100% 100% 0 0;
+				background-color: pink;
+			}
+			
+			.box1 {
+				width: 200px;
+				height: 50px;
+				border-radius: 50%/0 0 100% 100%;
+				background-color: pink;
+			}
+			
+			.line {
+				position: relative;
+				border-radius: 100px/2px;
+				width: 200px;
+				height: 10px;
+				margin: 10px 0;
+				background-color: pink;
+			}
+			
+			.line:before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 20px;
+				border-radius: 50%/100% 100% 0 0;
+				height: 10px;
+				top: -10px;
+				left: 0;
+				background-color: #f00;
+			}
+			
+			.left {
+				width: 100px;
+				height: 200px;
+				background-color: deeppink;
+				border-radius: 100% 0 0 100%/50%;
+			}
+			
+			.right {
+				width: 100px;
+				height: 200px;
+				background-color: deeppink;
+				border-radius: 0 100% 100% 0/50%;
+			}
+			
+			.num>div {
+				width: 200px;
+				height: 100px;
+			}
+			
+			.one {
+				border-radius: 10px;
+				background-color: cyan;
+			}
+			
+			.two {
+				background-color: deepskyblue;
+				border-radius: 20px 90% 20px 10px;
+			}
+			
+			.three {
+				background-color: yellowgreen;
+				border-radius: 30px/50%;
+			}
+			
+			.four {
+				background-color: deeppink;
+				border-radius: 30px 30px 15px 15px/100px 100px 20px 20px;
+				box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.5);
+			}
+			
+			.five {
+				background-color: chocolate;
+				border-radius: 60px 10px 60px 10px/90px 10px 90px 10px;
+			}
+			
+			.six {
+				background-color: green;
+				border-radius: 50%;
+			}
+			
+			.seven {
+				width: 100px!important;
+				background-color: mediumpurple;
+				border-radius: 20px 20px 50% 50%/20px 20px 100% 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+
+		</div>
+		<div class="line"></div>
+		<div class="box1">
+
+		</div>
+
+		<div class="left">
+
+		</div>
+		<div class="right">
+
+		</div>
+		<div class="num">
+			<div class="one">
+
+			</div>
+			<div class="two">
+
+			</div>
+			<div class="three">
+
+			</div>
+			<div class="four">
+
+			</div>
+			<div class="five">
+
+			</div>
+			<div class="six">
+
+			</div>
+			<div class="seven">
+
+			</div>
+		</div>
+	</body>
+
+</html>
