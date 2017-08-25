@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li {
+				width: 100px;
+				padding: 10px;
+				position: relative;
+				text-align: center;
+				color: #fff;
+				font-weight: bold;
+				font-size: 16px;
+				list-style: none;
+				display: inline-block;
+				cursor: pointer;
+			}
+			
+			li:hover:before {
+				background-color: dodgerblue;
+				-webkit-transform: skewX(-45deg) scale(1.1);
+			}
+			
+			li:before {
+				border-radius: 10px;
+				z-index: -1;
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				background-color: deepskyblue;
+				transition: all .3s linear;
+				-webkit-transform: skewX(-45deg);
+			}
+			
+			a {
+				text-decoration: none;
+				color: #fff;
+			}
+			
+			.box {
+				border: 1px solid #000;
+				margin: 100px;
+				width: 100px;
+				height: 100px;
+				overflow: hidden;
+				-webkit-transform: rotate(45deg);
+			}
+			
+			.box img {
+				-webkit-transform: rotate(-45deg) scale(1.4);
+				width: 100%;
+			}
+			
+			.box2 {
+				width: 200px;
+				height: 100px;
+				background: #0f0;
+				background: linear-gradient(-45deg, transparent 15px, #0f0 0);
+			}
+			
+			.box3 {
+				width: 200px;
+				height: 100px;
+				background: #0f0;
+				background: linear-gradient(45deg, transparent 15px, #0f0 0) left, linear-gradient(-45deg, transparent 15px, #0f0 0) right;
+				background-repeat: no-repeat;
+				background-size: 50% 100%;
+			}
+			
+			.box4 {
+				width: 200px;
+				height: 100px;
+				background: #0f0;
+				background: linear-gradient(135deg, transparent 15px, #0f0 0) left top, linear-gradient(-135deg, transparent 15px, #0f0 0) right top, linear-gradient(-45deg, transparent 15px, #0f0 0) right bottom, linear-gradient(45deg, transparent 15px, #0f0 0) left bottom;
+				background-repeat: no-repeat;
+				background-size: 50% 50%;
+			}
+			
+			.box5 {
+				width: 200px;
+				height: 100px;
+				background: #0f0;
+				background: radial-gradient(circle at top left, transparent 15px, #0f0 0) left top, radial-gradient(circle at right top, transparent 15px, #0f0 0) right top, radial-gradient(circle at right bottom, transparent 15px, #0f0 0) right bottom, radial-gradient(circle at left bottom, transparent 15px, #0f0 0) left bottom;
+				background-repeat: no-repeat;
+				background-size: 50% 50%;
+			}
+			
+			.box6 {
+				color: #fff;
+				display: table-cell;
+				text-align: center;
+				vertical-align: middle;
+				width: 200px;
+				height: 100px;
+				background-color: #58a;
+				box-shadow: 0px 10px 4px -4px #000;
+			}
+			
+			.box7 {
+				display: table-cell;
+				text-align: center;
+				vertical-align: middle;
+				color: #fff;
+				width: 200px;
+				height: 100px;
+				background-color: #58a;
+				box-shadow: 10px 10px 10px -5px #000;
+			}
+			
+			.box8 {
+				color: #fff;
+				display: table-cell;
+				text-align: center;
+				vertical-align: middle;
+				width: 200px;
+				height: 100px;
+				background-color: #58a;
+				box-shadow: 0px 10px 4px -4px #000,
+				0px -10px 4px -4px #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li>
+				<a href="">我的博客</a>
+			</li>
+			<li>
+				<a href="">我的博客</a>
+			</li>
+			<li>
+				<a href="">我的博客</a>
+			</li>
+			<li>
+				<a href="">我的博客</a>
+			</li>
+			<li>
+				<a href="">我的博客</a>
+			</li>
+			<li>
+				<a href="">我的博客</a>
+			</li>
+		</ul>
+
+		<div class="box">
+			<img src="img/test.jpg" alt="" />
+		</div>
+
+		<div class="box2">
+
+		</div>
+		<hr />
+		<div class="box3">
+
+		</div>
+		<hr />
+		<div class="box4">
+
+		</div>
+		<hr />
+		<div class="box5">
+
+		</div>
+		<hr />
+		<div class="box6">
+			单侧投影
+		</div>
+		<hr />
+		<div class="box7">
+			领边投影
+		</div>
+		<hr />
+		<div class="box8">
+			对边投影
+		</div>
+		<br /><br /><br />
+	</body>
+
+</html>
