@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				font-family: "微软雅黑"
+			}
+			
+			* {
+				-webkit-user-select: none;
+				-ms-user-select: none;
+			}
+			
+			label {
+				font-size: 30px;
+			}
+			
+			input[type='checkbox'] {
+				position: absolute;
+				clip: rect(0, 0, 0, 0);
+			}
+			
+			input[type='checkbox']+label::before {
+				text-align: center;
+				font-size: 30px;
+				content: '\a0';
+				color: #fff;
+				display: inline-block;
+				width: 1em;
+				height: 1em;
+				margin-right: 0.2em;
+				border-radius: 0.2em;
+				line-height: 1em;
+				background-color: silver;
+			}
+			
+			input[type='checkbox']:checked+label::before {
+				box-shadow: 1px 1px 1px 1px #64b2f1;
+				content: '\2713';
+				background-color: yellowgreen;
+			}
+			
+			#custom-btn::before {
+				box-shadow: 0px 1px rgba(0, 0, 0, 0.5);
+				border: 1px solid rgba(0, 0, 0, 0.2);
+				background-color: #ccc;
+				font-size: 18px;
+				color: #000;
+				content: '开关式按钮';
+				width: 100px;
+				background: linear-gradient(#ddd, #bbb);
+				padding: 10px;
+			}
+			
+			input[type='checkbox']:checked+#custom-btn::before,
+			input[type='checkbox']:active+#custom-btn::before {
+				border-color: rgba(0, 0, 0, 0.3);
+				background: #bbb;
+				box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6) inset;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<input type="checkbox" id="checkbox" /><label for="checkbox">自定义复选框</label>
+			<hr />
+			<input type="checkbox" id="btn" /><label id="custom-btn" for="btn"></label>
+		</div>
+	</body>
+
+</html>
