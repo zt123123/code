@@ -1,6 +1,10 @@
 # Express
 工作之余写的一个小项目，用到了Express核心技术，主要是UI界面的构建，业务逻辑需要自己实现
 
+## image（项目截图）
+### 首页
+![首页](https://github.com/zt123123/code/blob/master/my-pic-lib/admin.png?raw=true)
+
 ***
 1.首先安装Nodejs环境（已安装可忽略此步骤）
 [NodeJs下载](https://nodejs.org/en/download/)
