@@ -3,15 +3,15 @@
 
 ## image（项目截图）
 ### 首页
-![jspangAdmin](https://zt123123.github.io/test/img/5.png)
+![首页](https://raw.githubusercontent.com/zt123123/code/master/my-pic-lib/pos-manage/index.png)
 ### 店铺
-![jspangAdmin](https://zt123123.github.io/test/img/1.png)
+![店铺](https://raw.githubusercontent.com/zt123123/code/master/my-pic-lib/pos-manage/shop.png)
 ### 商品
-![jspangAdmin](https://zt123123.github.io/test/img/2.png)
+![商品](https://raw.githubusercontent.com/zt123123/code/master/my-pic-lib/pos-manage/goods.png)
 ### 图表
-![jspangAdmin](https://zt123123.github.io/test/img/3.png)
+![图表](https://raw.githubusercontent.com/zt123123/code/master/my-pic-lib/pos-manage/chart.png)
 ### 表格
-![jspangAdmin](https://zt123123.github.io/test/img/5.png)
+![表格](https://raw.githubusercontent.com/zt123123/code/master/my-pic-lib/pos-manage/table.png)
 
 ***
 1.首先安装Nodejs环境（已安装可忽略此步骤）
