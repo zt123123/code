@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
-    <title>Title</title>
+    <title>我的博客</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/app.css">
     <script src="/js/jquery.js"></script>
@@ -41,11 +41,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Action</a></li>
                                     <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -58,10 +53,11 @@
                         <ul class="nav navbar-nav navbar-right">
                             <!--<li><a href="#">Github</a></li>-->
                             <%if(username){%>
-                            <li><a href="#"><%=username%></a></li>
+                            <li><a>您好！<%=username%></a></li>
                             <li><a href="" id="logout">登出</a></li>
                             <%}else{%>
-                            <li><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
+                            <li><a href="#" id="reg" data-toggle="modal" data-target="#myModal">注册</a></li>
+                            <li><a href="#" id="log" data-toggle="modal" data-target="#myModal">登录</a></li>
                             <%}%>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -126,7 +122,8 @@
             <!--</a>-->
             <!--</div>-->
             <div class="jumbotron bgimg">
-                <h1>Hello, world!</h1>
+                <h1 class="typing">Welcome to my Blog</h1>
+                <!--<h1 class="typing">Hello world</h1>-->
                 <p>我的个人博客</p>
                 <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
             </div>
@@ -219,24 +216,44 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">登录</h4>
-                </div>
                 <div class="modal-body">
-                    <div>
-                        <div class="form-group">
-                            <label for="username">用户名</label>
-                            <input type="text" class="form-control" id="username" placeholder="用户名">
+                    <ul id="myTabs" class="nav nav-tabs">
+                        <li role="presentation" class="active"><a href="#">登录</a></li>
+                        <li role="presentation"><a href="#">注册</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+                            <div class="form-group">
+                                <label for="username">用户名</label>
+                                <input type="text" class="form-control" id="username" placeholder="用户名">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">密码</label>
+                                <input type="password" class="form-control" id="password"
+                                       placeholder="密码">
+                            </div>
+                            <div id="error-tip" style="display: none;" class="alert alert-danger" role="alert"></div>
+                            <button id="login" type="submit" class="btn btn-success">登录</button>
                         </div>
-                        <div class="form-group">
-                            <label for="password">密码</label>
-                            <input type="password" class="form-control" id="password"
-                                   placeholder="密码">
+                        <div role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledby="dropdown1-tab">
+                            <div class="form-group">
+                                <label for="username">用户名</label>
+                                <input type="text" class="form-control" id="reg-username" placeholder="用户名">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">密码</label>
+                                <input type="password" class="form-control" id="reg-password"
+                                       placeholder="密码">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">重复密码</label>
+                                <input type="password" class="form-control" id="reg-repassword"
+                                       placeholder="密码">
+                            </div>
+                            <div id="reg-error-tip" style="display: none;" class="alert alert-danger"
+                                 role="alert"></div>
+                            <button id="register" type="submit" class="btn btn-success">注册</button>
                         </div>
-                        <div id="error-tip" style="display: none;" class="alert alert-danger" role="alert"></div>
-                        <button id="login" type="submit" class="btn btn-success">登录</button>
                     </div>
                 </div>
             </div>
@@ -247,44 +264,110 @@
 <script>
 
     $(function () {
-        $('#login').on('click', function () {
-            var username = $('#username').val();
-            var password = $('#password').val();
+            var oLi = $("#myTabs li");
 
-            $.ajax({
-                url: 'http://localhost:3000/users/login',
-                type: 'post',
-                data: {
-                    username: username,
-                    password: password
-                },
-                dataType: 'json',
-                success: function (data) {
-                    if (data.errorcode == 0) {
-                        setTimeout(function () {
-                            $('#myModal').modal('hide');
+
+            $('#reg').on('click', function () {
+                var index = 1;
+                oLi.eq(index).addClass('active');
+                oLi.eq(0).removeClass('active');
+                changeTabPanel(index);
+            });
+
+            $('#log').on('click', function () {
+                var index = 0;
+                oLi.eq(index).addClass('active');
+                oLi.eq(1).removeClass('active');
+                changeTabPanel(index);
+            });
+
+            oLi.click(function (e) {
+                e.preventDefault();
+                var that = $(this);
+                var index = that.index();
+                that.addClass('active').siblings().removeClass('active');
+                changeTabPanel(index);
+            });
+
+            function changeTabPanel(index) {
+                $('#myTabContent>div').eq(index).addClass('active in').show().siblings().removeClass('active in').hide();
+            }
+
+            $(document).scroll(function () {
+                var scrollTop = $(this).scrollTop();
+                if (scrollTop > 70) {
+                    $('.navbar-inverse').css('backgroundColor', 'rgba(0,0,0,0.8 )');
+                } else {
+                    $('.navbar-inverse').css('backgroundColor', 'rgba(34,34,34,1)');
+                }
+            });
+
+
+            $('#login').on('click', function () {
+                var username = $('#username').val();
+                var password = $('#password').val();
+
+                $.ajax({
+                    url: '/users/login',
+                    type: 'post',
+                    data: {
+                        username: username,
+                        password: password
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.errorcode == 0) {
+                            setTimeout(function () {
+                                $('#myModal').modal('hide');
+                                window.location.reload();
+                            }, 500);
+                        }
+                        $('#error-tip').css('display', 'block').html(data.errordesc);
+                    }
+                })
+            });
+
+            $('#logout').on('click', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '/users/logout',
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.errorcode == 0) {
                             window.location.reload();
-                        }, 500);
+                        }
                     }
-                    $('#error-tip').css('display', 'block').html(data.errordesc);
-                }
-            })
-        });
+                })
+            });
 
-        $('#logout').on('click', function (e) {
-            e.preventDefault();
-            $.ajax({
-                url: 'http://localhost:3000/users/logout',
-                type: 'post',
-                dataType: 'json',
-                success: function (data) {
-                    if (data.errorcode == 0) {
-//                        window.location.reload();
+            $('#register').on('click', function () {
+                var username = $('#reg-username').val();
+                var password = $('#reg-password').val();
+                var repassword = $('#reg-repassword').val();
+
+                $.ajax({
+                    url: '/users/register',
+                    type: 'post',
+                    data: {
+                        username: username,
+                        password: password,
+                        repassword: repassword
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.errorcode == 0) {
+                            var index = 0;
+                            oLi.eq(index).addClass('active');
+                            oLi.eq(1).removeClass('active');
+                            changeTabPanel(index);
+                        }
+                        $('#reg-error-tip').css('display', 'block').html(data.errordesc);
                     }
-                }
+                })
             })
-        })
-    })
+        }
+    )
 
 </script>
 </html>

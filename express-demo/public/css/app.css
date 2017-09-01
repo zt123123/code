@@ -4,14 +4,47 @@ a:active, a:focus, button:active, button:focus {
 
 .bgimg {
     color: #fff;
-    background: url("/img/bg.jpg") no-repeat left top;
+    background: url("/img/bg.jpg") no-repeat 0 0;
     background-size: cover;
+    /*animation: scroll 20s infinite alternate linear;*/
+}
+
+@-webkit-keyframes scroll {
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+.typing {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    font-family:Consolas;
+    width: 19ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: #000 0.2em solid;
+    transition: all;
+    -webkit-animation: typing 4s steps(19) infinite alternate, caret 1s steps(1) infinite;
+    animation: typing 4s steps(19) infinite alternate, caret 1s steps(1) infinite;
+}
+
+@-webkit-keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@-webkit-keyframes caret {
+    50% {
+        border-color: transparent;
+    }
 }
 
 .p10 {
     display: inline-block;
     margin: 5px 10px;
-    font-size:20px;
+    font-size: 20px;
     padding: 10px;
 }
 

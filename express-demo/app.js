@@ -13,18 +13,6 @@ var users = require('./routes/users');
 
 var app = express();
 
-//链接mongodb
-app.use(function (req, res, next) {
-    mongoose.connect(connectUrl, {useMongoClient: true}, function (err) {
-        if (!err) {
-            console.log('success connected');
-        }
-    });
-
-    next();
-});
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.html', ejs.__express);
@@ -58,5 +46,18 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+
+
+function connectDb() {
+    //链接mongodb
+    mongoose.connect(connectUrl, {useMongoClient: true}, function (err) {
+        if (!err) {
+            console.log('success connected');
+        }
+    });
+}
+
+
+connectDb();
 
 module.exports = app;
