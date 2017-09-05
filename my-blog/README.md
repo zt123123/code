@@ -2,7 +2,7 @@
 
 > 基于VueCli脚手架构建的一个博客系统，项目虽小，却用到了多种技术。主要有vue全家桶，express，elementui，axios，mongodb，webpack，前后端都由我一人完成，可以说是个小型的全栈项目,项目还有很多功能等待完善，后续我会继续开发。
 
-## Build Setup
+## 构建步骤
 
 ``` bash
 # install dependencies
