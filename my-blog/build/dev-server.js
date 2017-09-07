@@ -10,7 +10,8 @@ let News = require('../model/news')
 var index = require('../routes/index');
 var users = require('../routes/users');
 
-var mongoose = require('mongoose')
+// var mongoose = require('mongoose')
+import mongoose from 'mongoose'
 var opn = require('opn')
 var path = require('path')
 var express = require('express')
