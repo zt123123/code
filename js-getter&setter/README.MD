@@ -1,6 +1,6 @@
 # js中的getter与setter（Vuejs实现双向绑定的原理）
 
-···
+```
 var  x={
   a:1,
   b:2,
@@ -18,7 +18,7 @@ var  x={
 x.r=123
 console.log(x.r)
 console.log(x.random);
-···
+```
 
 看了很多文章js原型链的文章都觉得一头雾水，自己在chrome控制台写一个对象，然后展开观察，你就能很清楚的看到一层层的嵌套关系，这就是原型链。理解原型链一个重要的概念就是，每个对象都有一个prorotype属性，这个属性是无法去直接得到，大多数浏览器提供了一个非标准的__proto__属性去访问对象的原型，也就是说XX.prototype==new XX().__ptoto__;
 
