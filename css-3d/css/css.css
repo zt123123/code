@@ -1,0 +1,91 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 100px;
+}
+
+.wrapper {
+    /*overflow: hidden;*/
+    padding: 10px;
+    perspective: 3000px;
+    width: 500px;
+    height: 500px;
+    /*border: 1px solid #000;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    transform-style: preserve-3d;
+    /*transform: rotateY(30deg) rotateX(-17deg);*/
+    animation: alls 10s infinite linear;
+
+}
+
+@keyframes alls {
+    to {
+        transform: rotateX(360deg) rotateY(360deg) rotate3d(0, 0, 0, 0);
+    }
+}
+
+@keyframes run {
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.inner {
+    border-radius: 10px;
+
+    overflow: hidden;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    /*animation: run 2s linear infinite;*/
+}
+
+.box:hover {
+    animation-play-state: paused;
+}
+
+.inner1 {
+    transform: rotateX(90deg) translateZ(-250px);
+    background-color: orange;
+}
+
+.inner2 {
+    transform: rotateX(-90deg) translateZ(-250px);
+    background-color: yellow;
+}
+
+.inner3 {
+    transform: translateZ(-250px);
+    background-color: green;
+}
+
+.inner4 {
+    transform: translateZ(250px);
+    background-color: blue;
+}
+
+.inner5 {
+    transform: rotateY(90deg) translateZ(250px);
+    background-color: cyan;
+}
+
+.inner6 {
+    transform: rotateY(90deg) translateZ(-250px);
+    background-color: purple;
+}
+
+.inner img {
+    height: 100%;
+}
