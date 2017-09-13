@@ -1,0 +1,25 @@
+# js中的getter与setter（Vuejs实现双向绑定的原理）
+
+···
+var  x={
+  a:1,
+  b:2,
+  
+  set r(val){
+    this.a=val;
+  },
+  get r(){
+    return this.a;
+  },
+  get random(){
+    return Math.ceil(Math.random()*10);
+  }
+}
+x.r=123
+console.log(x.r)
+console.log(x.random);
+···
+
+看了很多文章js原型链的文章都觉得一头雾水，自己在chrome控制台写一个对象，然后展开观察，你就能很清楚的看到一层层的嵌套关系，这就是原型链。理解原型链一个重要的概念就是，每个对象都有一个prorotype属性，这个属性是无法去直接得到，大多数浏览器提供了一个非标准的__proto__属性去访问对象的原型，也就是说XX.prototype==new XX().__ptoto__;
+
+js继承是基于原型链的，如果自身没有属性和方法，就到原型对象的原型上面去找，直到找到为止，没有找到就返回undefined。
