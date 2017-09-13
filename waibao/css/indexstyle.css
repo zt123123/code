@@ -1,0 +1,777 @@
+.newonefloorrightul li:hover {
+    background: #D7D7D7 !important;
+}
+
+.newonefloorrightul li:hover a {
+    color: #FFF !important;
+}
+
+.layui-layer-btn a {
+    font-size: 14px;
+}
+
+.zuiyouxian {
+    z-index: 99 !important;
+}
+
+.newbg {
+    background: #fae491 url(../images/bg.jpg) no-repeat center top;
+    background-size: 100% auto;
+}
+
+.newtopbar {
+    height: 100px;
+    width: 1100px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.newlogo {
+    float: left;
+    width: 263px;
+    height: 100px;
+}
+
+.newgg {
+    background: url(../images/dhfpbbg.png) no-repeat;
+}
+
+.newtianqi {
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.newgg {
+    float: right;
+    margin-top: 15px;
+    width: 375px;
+    height: 70px;
+}
+
+.newserch {
+    width: 1100px;
+    height: 130px;
+    margin: 0px auto;
+    margin-bottom: 8px;
+}
+
+.newtuijianbu {
+    z-index: 101;
+    position: relative;
+    margin: 0px auto;
+    width: 493px;
+    padding-top: 10px;
+}
+
+.newtuijianbu ul {
+    overflow: hidden;
+    height: 18px;
+}
+
+.newtuijianbu a {
+    color: #666;
+}
+
+.newtuijianbu ul li {
+    float: left;
+    margin-right: 15px;
+}
+
+.newtuijianbu ul li:hover a {
+    color: #ff0000;
+}
+
+.newbanweianniu {
+    width: 1100px;
+    margin: 0px auto;
+    border-radius: 6px 6px 0px 0px;
+    overflow: hidden;
+    height: 44px;
+    background: #f1f3f5;
+    border: 1px solid #c3ccd6;
+}
+
+.newbanweianniu ul {
+    height: 44px;
+    padding-left: 4px;
+    position: relative;
+}
+
+.newbanweianniu ul li {
+    float: left;
+    line-height: 44px;
+    height: 44px;
+    text-align: center;
+    position: relative;
+}
+
+.newbanweianniu ul li a {
+    float: left;
+    width: 136.8px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    font-family: "宋体";
+    z-index: 50;
+}
+
+.newbanweianniu ul li a img {
+    vertical-align: middle;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    position: relative;
+    left: -6px;
+    top: -2px;
+}
+
+.newbanweianniu ul li a i {
+    position: absolute;
+    height: 18px;
+    width: 1px;
+    background-color: #3385FF;
+    right: 0px;
+    top: 13px;
+}
+
+.newonefloor {
+    width: 1100px;
+    box-shadow: rgba(0, 0, 0, 0.5) 6px 6px 24px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 6px 6px 24px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 6px 6px 24px;
+    margin: 0px auto;
+    margin-top: 8px;
+    border-radius: 7px;
+    height: 349px;
+}
+
+.newonefloorleft {
+    background-color: #0AA770;
+    float: left;
+    height: 349px;
+    width: 280px;
+    overflow: hidden;
+    border-radius: 7px 0px 0px 7px;
+}
+
+.newonefloorright {
+    background-color: #FFF;
+    float: left;
+    height: 349px;
+    width: 820px;
+    min-width: 820px;
+    position: relative;
+    z-index: 90;
+    border-radius: 0px 7px 7px 0px;
+}
+
+.newonefloorrightulborderbottom {
+    border-top: 1px solid #09F;
+    width: 805px;
+    margin-left: 8px;
+}
+
+.newbanweianniu ul li:hover a {
+    color: #F00;
+}
+
+.newonefloorright .newonefloorrightul {
+    border-left: 1px solid #09F;
+    margin: 6px 5px 0px 8px;
+    width: 810px;
+    height: 336px;
+}
+
+.newonefloorright .newonefloorrightul li {
+    float: left;
+    border-top: 1px solid #09F;
+    border-right: 1px solid #09F;
+    height: 41px;
+    line-height: 41px;
+    transition: 0.2s ease-in;
+    width: 133px;
+    max-width: 133px;
+    position: relative;
+    z-index: 10;
+    text-align: left;
+    background-color: #FFFFFF;
+}
+
+.newonefloorright .newonefloorrightul li img {
+    top: 12.5px;
+    position: absolute;
+    left: 11px;
+}
+
+.newonefloorright .newonefloorrightul li a {
+    color: #333;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 41px;
+    font-family: "微软雅黑";
+    font-size: 13px;
+    text-indent: 36px;
+    overflow: hidden;
+}
+
+.newonefloorright .newonefloorrightul .newlihove123r {
+    -webkit-box-shadow: 3px 3px 5px 2px #CC9;
+    -webkit-transition: all 500ms ease 10ms;
+    -moz-transition: all 500ms ease 10ms;
+    -ms-transition: all 500ms ease 10ms;
+    -o-transition: all 500ms ease 10ms;
+    transition: all 500ms ease 10ms;
+    background-color: #0A865A;
+}
+
+.newonefloorright .newonefloorrightul .newlihove123ra {
+    color: #FFF;
+}
+
+.newgonggao {
+    width: 1100px;
+    margin: 0px auto;
+    background: #F3F2F2;
+    border-radius: 0px 0px 6px 6px;
+    height: 38px;
+    overflow: hidden;
+    text-align: center;
+    color: #666;
+    border: 1px solid #c3ccd6;
+    border-top: 0;
+    line-height: 38px;
+}
+
+.newbg .newgonggao a {
+    font-family: "宋体";
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.newonefloorlefttop {
+    height: 48px;
+    line-height: 48px;
+    font-weight: bold;
+    background-color: #0A865A;
+    color: #fff;
+}
+
+.newonefloorlefttop span {
+    width: 57px;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    display: block;
+    text-align: center;
+    background-color: #10714F;
+    font-size: 16px;
+}
+
+.newonefloorlefttop h3 {
+    float: left;
+    font-size: 16px;
+    margin-left: 23px;
+}
+
+.newonefloorleftbottomul li {
+    float: left;
+    width: 140px;
+    text-align: center;
+    color: #FFF;
+    height: 42px;
+    line-height: 42px;
+}
+
+.newonefloorleftbottomul li a {
+    font-size: 14px;
+    color: #FFF;
+}
+
+.newonefloorleftbottomul li a:hover {
+    color: red;
+}
+
+.newonefloorleftbottomul li span {
+    margin: 0px 10px 0px 10px;
+}
+
+.newonefloorrighttuijian {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 37px;
+    height: 37px;
+    z-index: 99;
+    background: url(../images/hot.png) no-repeat;
+}
+
+.newbanweianniu li .newchengkai {
+    transition: all 400ms ease-in;
+    z-index: 9;
+    position: absolute;
+    width: 0%;
+    left: 50%;
+    height: 100%;
+    background: #E6E6E6;
+}
+
+.newbanweianniu li:hover .newchengkai {
+    width: 100%;
+    left: 0px;
+}
+
+@font-face {
+    font-family: 'linecons';
+    src: url('../fonts/linecons.eot');
+    src: url('/Skins/fonts/linecons.eot#iefix') format('embedded-opentype'), url('../fonts/linecons.ttf') format('truetype'), url('/Skins/fonts/linecons.woff') format('woff'), url('/Skins/fonts/linecons.svg') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+[class^="newlitub_"]:before, [class*=" newlitub_"]:before {
+    font-family: 'linecons';
+    font-style: normal;
+    speak: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*以下是2F-5F的分类*/
+.newlitub_tv:before {
+    content: "\e003";
+}
+
+.newlitub_data:before {
+    content: "\e021";
+}
+
+.newlitub_pen:before {
+    content: "\e00f";
+}
+
+.newlitub_like:before {
+    content: "\e01a";
+}
+
+.fenleihangshu {
+    background-color: #f5f5f5;
+    height: 47px;
+    width: 820px;
+    border-bottom: #e8e8e8 1px solid;
+    min-width: 820px;
+}
+
+.fenleihangshutitle {
+    width: 60px;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background-color: #eee;
+    text-align: center;
+}
+
+.fenleihangshufenlei li {
+    transition: all 300ms linear 250ms;
+    height: 48px;
+    line-height: 48px;
+    width: 109px;
+    float: left;
+    color: #e8e8e8;
+    position: relative;
+    z-index: 10;
+    padding-right:0;
+    box-sizing: border-box;
+}
+
+.fenleihangshulr {
+    float: left;
+    display: block;
+    height: 48px;
+    width: 48px;
+    margin-left: 14px;
+    line-height: 48px;
+    overflow: hidden;
+}
+
+.fenleihangshufenlei {
+    height: 48px;
+    line-height: 48px;
+    margin-left: 23px;
+    float: left;
+}
+
+.newfloortyrightfenlei a font {
+    max-width: 100% !important;
+}
+
+.fenleihangshulr a {
+    max-width: 100% !important;
+}
+
+.newfloortyrightfenlei a, .newfloortyrightfenlei a font {
+    font-size: 13px;
+    display: block;
+    text-align: center;
+    float: left;
+    text-align: left;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fenleihangshufenlei li a:hover {
+    color: #096;
+}
+
+.fenleihangshu:hover {
+    background-color: #EEE;
+}
+
+.fenleihangshufenlei li a:hover {
+    color: #0A865A;
+}
+
+/*以下是2F-5F的主体*/
+.newfloorty {
+    width: 1100px;
+    margin: 0px auto;
+    height: 384px;
+    margin-top: 9px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.5) 6px 6px 24px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 6px 6px 24px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 6px 6px 24px;
+}
+
+.newfloortyleft {
+    float: left;
+    height: 384px;
+    width: 280px;
+    overflow: hidden;
+    border-radius: 7px 0px 0px 7px;
+}
+
+.newfloortylefttop {
+    height: 48px;
+    line-height: 48px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.newfloortylefttop span {
+    width: 57px;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+}
+
+.newfloortylefttop h3 {
+    float: left;
+    font-size: 16px;
+    margin-left: 23px;
+}
+
+.newfloortyleftbottomul li {
+    float: left;
+    width: 140px;
+    text-align: center;
+    color: #FFF;
+    height: 46px;
+    line-height: 46px;
+}
+
+.newfloortyleftbottomul li a {
+    font-size: 14px;
+    color: #FFF;
+}
+
+.newfloortyleftbottomul li a:hover {
+    color: red;
+}
+
+.newfloortyright {
+    float: left;
+    height: 384px;
+    width: 820px;
+    min-width: 820px;
+    border-radius: 0px 7px 7px 0px;
+}
+
+.newfloortyrighttitle {
+    height: 48px;
+    line-height: 48px;
+    position: relative;
+    background: #e8e8e8;
+    border-radius: 0px 7px 0px 0px;
+    z-index: 0;
+}
+
+.newfloortyrighttitle span {
+    line-height: 48px;
+    height: 48px;
+}
+
+.newfloortyrighttitledazi {
+    margin-left: 71px;
+    font-size: 24px;
+}
+
+.newfloortyrighttitlexiaozi {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.newfloortyrighttitle i {
+    top: 0px;
+    left: 13px;
+    font-size: 36px;
+    position: absolute;
+}
+
+/*以下是2F-5F的配色情况*/
+.newfloortwo1 {
+    background-color: #308FC0;
+}
+
+.newfloortwo2 {
+    background-color: #157DB1;
+}
+
+.newfloortwo3 {
+    background-color: #57B7E7;
+}
+
+.newfloortwo4 {
+    color: #57B7E7;
+}
+
+.newfloorthree1 {
+    background-color: #faa62c;
+}
+
+.newfloorthree2 {
+    background-color: #e88d0a;
+}
+
+.newfloorthree3 {
+    background-color: #f8c753;
+}
+
+.newfloorthree4 {
+    color: #f8c753;
+}
+
+.newfloorfour1 {
+    background-color: #eb3357;
+}
+
+.newfloorfour2 {
+    background-color: #d02b4d;
+}
+
+.newfloorfour3 {
+    background-color: #FF9999;
+}
+
+.newfloorfour4 {
+    color: #eb3357;
+}
+
+.newfloorfive1 {
+    background-color: #5F5C5C;
+}
+
+.newfloorfive2 {
+    background-color: #000000;
+}
+
+.newfloorfive3 {
+    background-color: #A29D9D;
+}
+
+.newfloorfive4 {
+    color: #000000;
+}
+
+/*以下底部样式*/
+.newmp3 {
+    width: 1100px;
+    margin: 0px auto;
+    overflow: hidden;
+    margin-top: 10px;
+    background: #FFF;
+    border-radius: 9px;
+}
+
+.newicoselect {
+    cursor: pointer;
+    transition: all 400ms ease-in;
+    display: block;
+    background: url(../images/big_bg_w.png) no-repeat;
+    background-position: 7px -50px;
+    width: 20px;
+    height: 22px;
+    position: absolute;
+    top: 11px;
+    right: 2px;
+}
+
+.newselectinput {
+    width: 135px;
+    position: absolute;
+    top: 41px;
+    height: 0px;
+    left: -1px;
+    border-top: 1px solid #09F;
+    z-index: 999;
+    background-color: #FFF;
+    transition: all 500ms ease-in;
+    overflow: hidden;
+}
+
+.newselectinput a {
+    border-bottom: 1px solid #FFF;
+    border-left: 1px solid #0AA770;
+    border-right: 1px solid #0AA770;
+}
+
+.newselectinput a i {
+    font-style: normal;
+    font-size: 18px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    left: -26px;
+    font-family: layui-icon !important;
+    top: 2.5px;
+}
+
+.newselectinput a:hover {
+    color: #000;
+}
+
+.newonefloorright .newonefloorrightul li .newzhijiej {
+    color: #FFF;
+    position: relative;
+    background: #0AA770;
+    height: 41px;
+    width: 133px;
+    line-height: 41px;
+    font-size: 13px;
+    text-indent: 38px;
+}
+
+.newonefloorright .newonefloorrightul li .newchakwzxq {
+    color: #FFF;
+    position: relative;
+    height: 41px;
+    background: #0AA770;
+    width: 133px;
+    line-height: 41px;
+    font-size: 13px;
+    text-indent: 38px;
+}
+
+.newonefloorright .newonefloorrightul li .newgdfl {
+    color: #FFF;
+    position: relative;
+    height: 41px;
+    line-height: 41px;
+    width: 133px;
+    background: #0AA770;
+    font-size: 13px;
+    text-indent: 38px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.newonefloorright .newonefloorrightul li .newzhijiej:hover, .newonefloorright .newonefloorrightul li .newchakwzxq:hover, .newonefloorright .newonefloorrightul li .newgdfl:hover {
+    background: #0A865A;
+}
+
+.newgengduoselect {
+    cursor: pointer;
+    transition: all 400ms ease-in;
+    display: block;
+    background: url(../images/bagselect.png) no-repeat;
+    background-position: 7px -62px;
+    width: 20%;
+    height: 48px;
+    float: left;
+}
+
+.gengduogengdsele {
+    border-radius: 0 0 8px 8px;
+}
+
+.newselectgengduo {
+    width: 108px;
+    display: block;
+    position: absolute;
+    top: 46px;
+    z-index: 999;
+    left: 0px;
+    height: 0px;
+    transition: all 500ms ease-in;
+    overflow: hidden;
+}
+
+.newselectgengduo a {
+    display: block;
+    width: 100%;
+    height: 28px;
+    font-size: 13px;
+    color: #FFF;
+    border-top: 1px solid #fff;
+    line-height: 30px;
+}
+
+.newselectgengduo a:hover {
+    color: red;
+}
+
+.newfloortyrightfenlei .newselectgengduo a {
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    width: 90px;
+    text-indent: 0;
+}
+
+.scroll_down_fixed {
+    transition: all 400ms ease-in;
+    width: 100%;
+    background: #f7f7f8;
+    position: fixed;
+    top: 0px;
+    margin: 0px;
+    border: none;
+    border-bottom: 1px solid #B1B4B8;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    -moz-opacity: 0.9;
+    -khtml-opacity: 0.9;
+    left: 0px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
+.scroll_down_fixed ul {
+    transition: all 400ms ease-in;
+    width: 1100px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+}

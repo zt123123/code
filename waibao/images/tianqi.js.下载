@@ -1,0 +1,3 @@
+﻿//document.writeln("<iframe width=\'430\' scrolling=\'no\' height=\'80\' frameborder=\'0\' allowtransparency=\'true\' src=\'http://i.tianqi.com/index.php?c=code&id=2&color=%23FFFFFF&icon=1&num=3\'></iframe>");
+
+document.writeln("<iframe width=\'430\' scrolling=\'no\' height=\'80\' frameborder=\'0\' allowtransparency=\'true\' src=\'https://tianqi.2345.com/plugin/widget/index.htm?s=1&z=1&t=0&v=0&d=3&bd=0&k=&f=&q=1&e=1&a=1&c=57516&w=575&h=96&align=center&f=ffffff&qq-pf-to=pcqq.c2c\'></iframe>");
