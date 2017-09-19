@@ -324,6 +324,10 @@ body {
   background-image: url(../img/icon_43.png);
   margin-right: 0.3rem;
 }
+.fixbottom .right .pause {
+  background-image: url(../img/icon_44.png);
+  margin-right: 0.3rem;
+}
 .fixbottom .right .playlist {
   background-image: url(../img/icon_45.png);
   margin-left: 0.23333333rem;

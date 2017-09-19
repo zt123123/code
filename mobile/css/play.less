@@ -1,0 +1,124 @@
+@import 'reset.less';
+body {
+    background-color: #60474f;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 0 0.7rem 0 0.9rem;
+    box-sizing: border-box;
+    height: 3.55rem;
+    .top {
+        height: 2.58333333rem;
+        .back {
+            width: 1rem;
+            height: 2.58333333rem;
+            background: url(../img/icon2_01.png) no-repeat center center;
+            background-size: contain;
+        }
+        .musicinfo {
+            margin-top: 0.46666666rem;
+            margin-left: 0.68333333rem;
+            h3 {
+                font-size: 0.78333333rem;
+                color: #fff;
+            }
+            .artist {
+                font-size: 0.61666666rem;
+                color: #a19297;
+            }
+        }
+        .share {
+            width: 1rem;
+            height: 2.58333333rem;
+            background: url(../img/icon2_02.png) no-repeat center center;
+            background-size: contain;
+        }
+    }
+    .bottom {
+        height: 0.96666666rem;
+        line-height: 0.96666666rem;
+        .volumeicon {
+            margin-right: 0.76666666rem;
+            height: 0.96666666rem;
+            width: 1rem;
+            background: url(../img/icon2_03.png) no-repeat center center;
+            background-size: contain;
+        }
+        .volume {
+            display: block;
+            margin-top: 0.43333333rem;
+            width: 13.66666666rem;
+            background-color: #7a626a;
+            border-radius: 0.05rem;
+            height: 0.1rem;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            cursor: default;
+            height: 0.4rem;
+            width: 0.4rem;
+            border-radius: 0.2rem;
+            background-color: #fff;
+        }
+    }
+}
+
+.lyric {
+    position: absolute;
+    top: 3.55rem;
+    bottom: 6rem;
+    left: 0;
+    right: 0;
+    font-size: 0.76666666rem;
+    text-align: center;
+    overflow: scroll;
+    color: #b5a7ab;
+    p {
+        line-height: 2.15rem;
+    }
+}
+
+.active {
+    color: #fff;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 6rem;
+    background-image: linear-gradient(#60474f, #3a2a2f);
+    .duration {
+        height: 2.4rem;
+    }
+    .control {
+        height: 3.6rem;
+        div {
+            float: left;
+            width: 3.6rem;
+            height: 2.3rem;
+            background: no-repeat center center;
+            background-size: contain;
+        }
+        .playmode {
+            background-image: url(../img/icon2_07.png);
+        }
+        .prev {
+            background-image: url(../img/icon2_04.png);
+        }
+        .play {
+            background-image: url(../img/icon2_05.png);
+        }
+        .next {
+            background-image: url(../img/icon2_06.png);
+        }
+        .history {
+            background-image: url(../img/icon2_08.png);
+        }
+    }
+}
