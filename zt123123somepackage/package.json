@@ -1,0 +1,23 @@
+{
+  "main": "./lib/interface.js",
+  "name": "zt123123somepackage",
+  "version": "1.0.0",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["demo","test","zt123123"],
+  "author": "张天",
+  "license": "ISC",
+  "description": "a demo for publish a node_modules",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zt123123/code.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zt123123/code/issues"
+  },
+  "homepage": "https://github.com/zt123123/code#readme"
+}
