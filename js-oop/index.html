@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<title>Document</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+			}
+			
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				float: left;
+			}
+			
+			img {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="box"></div>
+		<div id="box2"></div>
+
+		<script>
+			(function($, window) {
+
+				window.Carousel = Carousel;
+
+				function Carousel(obj) {
+					this.id = "#" + obj.id;
+					this.width = obj.width;
+					this.imgArr = obj.imgArr;
+					this.$ul = null;
+					this.index = 1;
+					this.init();
+				}
+
+				Carousel.prototype.init = function() {
+
+					$(this.id).css({
+						"position": "relative",
+						"width": this.width,
+						"height": 500,
+						"overflow": "hidden"
+					});
+
+					this.$ul = $("<ul>").css({
+						"width": this.width * this.imgArr.length,
+						"position": "absolute",
+						"left": 0,
+						"top": 0
+					});
+
+					for(var i = 0; i < this.imgArr.length; i++) {
+						$(this.$ul).append($("<li><img width=" + this.width + " src=" + this.imgArr[i] + "></li>"));
+					}
+
+					$(this.id).append(this.$ul);
+
+					this.autoplay();
+
+				}
+
+				Carousel.prototype.next = function() {
+
+					if(this.index >= this.imgArr.length) {
+
+						$(this.$ul).css({
+							"left": 0
+						})
+
+						this.index = 1;
+					}
+
+					var dis = (-(this.width)) * (this.index++);
+					$(this.$ul).animate({
+						"left": dis
+					}, 1000)
+				}
+
+				Carousel.prototype.autoplay = function() {
+					var that = this;
+
+					setInterval(function() {
+						that.next();
+					}, 2000)
+				}
+
+			})(jQuery, window)
+
+			new Carousel({
+				id: "box",
+				width: 500,
+				imgArr: [
+					"img/1.jpg",
+					"img/2.jpg",
+					"img/3.jpg",
+					"img/4.jpg",
+					"img/1.jpg"
+				]
+			});
+			
+			new Carousel({
+				id: "box2",
+				width: 300,
+				imgArr: [
+					"img/1.jpg",
+					"img/2.jpg",
+					"img/3.jpg",
+					"img/4.jpg",
+					"img/1.jpg"
+				]
+			});
+		</script>
+	</body>
+
+</html>
