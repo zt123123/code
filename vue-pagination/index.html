@@ -16,11 +16,16 @@
 				<th>ID</th>
 				<th>姓名</th>
 				<th>年龄</th>
+				<th>操作</th>
 			</tr>
 	  		<tr v-for="(item,key) in items">
 	  			<td>{{item.id}}</td>
 	  			<td>{{item.name}}</td>
 	  			<td>{{item.age}}</td>
+	  			<td>
+	  				<button class="btn btn-primary">编辑</button>
+	  				<button class="btn btn-danger" @click="del(item.id)">删除</button>
+	  			</td>
 	  		</tr>
 		</table>
 
@@ -72,6 +77,14 @@
 			nextPage:function(){
 				this.index=this.curitem>=this.totalPage?this.totalPage:++this.curitem;
 				this.getPage(this.index);
+			},
+			del:function(id){
+				var params = new URLSearchParams();
+				params.append('id', id);
+				axios.post("/del.php",params).then((res)=>{
+					console.log(res.data);
+					this.getList();
+				})
 			}
 		}
 	})
