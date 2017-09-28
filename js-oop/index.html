@@ -46,7 +46,7 @@
 					this.width = obj.width;
 					this.imgArr = obj.imgArr;
 					this.$ul = null;
-					this.index = 1;
+					this.index = 0;
 					this.init();
 				}
 
@@ -76,18 +76,34 @@
 
 				}
 
+				Carousel.prototype.prev = function() {
+					if(this.index <= 0) {
+
+						$(this.$ul).css({
+							"left": (-this.width) * (this.imgArr.length - 2)
+						})
+
+						this.index = this.imgArr.length - 2;
+					}
+
+					var dis = (-(this.width)) * (--this.index);
+					$(this.$ul).animate({
+						"left": dis
+					}, 1000)
+				}
+
 				Carousel.prototype.next = function() {
 
-					if(this.index >= this.imgArr.length) {
+					if(this.index >= this.imgArr.length - 2) {
 
 						$(this.$ul).css({
 							"left": 0
 						})
 
-						this.index = 1;
+						this.index = 0;
 					}
 
-					var dis = (-(this.width)) * (this.index++);
+					var dis = (-(this.width)) * (++this.index);
 					$(this.$ul).animate({
 						"left": dis
 					}, 1000)
@@ -97,7 +113,8 @@
 					var that = this;
 
 					setInterval(function() {
-						that.next();
+						//						that.next();
+						//						that.prev();
 					}, 2000)
 				}
 
@@ -107,6 +124,7 @@
 				id: "box",
 				width: 500,
 				imgArr: [
+					"img/4.jpg",
 					"img/1.jpg",
 					"img/2.jpg",
 					"img/3.jpg",
@@ -114,11 +132,12 @@
 					"img/1.jpg"
 				]
 			});
-			
-			new Carousel({
+
+			var cc = new Carousel({
 				id: "box2",
 				width: 300,
 				imgArr: [
+					"img/4.jpg",
 					"img/1.jpg",
 					"img/2.jpg",
 					"img/3.jpg",
@@ -126,6 +145,8 @@
 					"img/1.jpg"
 				]
 			});
+
+			//			cc.prev();
 		</script>
 	</body>
 
