@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: #f00;
+				cursor: move;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box" id="box" style="left: 0px;top: 0px;">
+
+		</div>
+
+		<script>
+			var box = document.getElementById("box");
+
+			box.onmousedown = down;
+
+			function down(e) {
+
+				e = e || window.event;
+
+				this["startX"] = e.clientX;
+				this["startY"] = e.clientY;
+				this["startL"] = parseFloat(this.style.left);
+				this["startT"] = parseFloat(this.style.top);
+
+				//IE和火狐,谷歌不兼容
+				if(this.setCapture) {
+					this.setCapture();
+				} else {
+					var that = this;
+					document.onmousemove = function(e) {
+						move.call(that, e);
+					};
+					document.onmouseup = function() {
+						up.call(that, e);
+					};
+				}
+			}
+
+			function move(e) {
+				e = e || window.event;
+
+				var curL = (e.clientX - this["startX"]) + this["startL"];
+				var curT = (e.clientY - this["startY"]) + this["startT"];
+
+				var minL = 0,
+					minT = 0,
+					maxL = (document.documentElement.clientWidth || document.body.clientWidth) - this.offsetWidth,
+					maxT = (document.documentElement.clientHeight || document.body.clientHeight) - this.offsetHeight;
+				//边界值
+				curL = curL < minL ? minL : (curL > maxL ? maxL : curL);
+				curT = curT < minT ? minT : (curT > maxT ? maxT : curT);
+
+				this.style.left = curL + "px";
+				this.style.top = curT + "px";
+			}
+
+			function up(e) {
+				e = e || window.event;
+
+				if(this.releaseCapture) {
+					this.releaseCapture();
+				} else {
+					document.onmousemove = null;
+					document.onmouseup = null;
+				}
+			}
+		</script>
+	</body>
+
+</html>
