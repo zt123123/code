@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			html {
+				font-size: 100px;
+			}
+			
+			.box {
+				width: 1rem;
+				height: 1rem;
+				background-color: #f00;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="box">
+
+		</div>
+		<script>
+			function rem() {
+				var rem = 100; //1rem代表100px
+				var desW = 640; //设计稿宽度
+				var deviceW = document.documentElement.clientWidth; //设备宽度
+				var ratio = (deviceW / desW) * rem; //比例
+				document.documentElement.style.fontSize = ratio + "px";
+			}
+
+			document.addEventListener("DOMContentLoaded", rem);
+
+			window.onresize = rem;
+		</script>
+	</body>
+
+</html>
