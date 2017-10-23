@@ -1,18 +1,19 @@
-(function(window) {
-	function rem() {
-		var rem = 100; //1rem代表100px
-		var desW = 640; //设计稿宽度
-		var deviceW = document.documentElement.clientWidth; //设备宽度
-		var ratio = (deviceW / desW) * rem; //比例
+(function(doc, win) {
+	var docEl = doc.documentElement,//设备宽度
+		rem = 100, //1rem代表100px
+		desW = 640, //设计稿宽度
+		resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		recalc = function() {
+			var clientWidth = docEl.clientWidth;
+			if (!clientWidth) return;
+			if (clientWidth >= desW) {
+				docEl.style.fontSize = rem + "px";
+			} else {
+				docEl.style.fontSize = rem * (clientWidth / desW) + 'px';
+			}
+		};
 
-		if(deviceW > desW) {
-			document.documentElement.style.fontSize = rem + "px";
-			return;
-		}
-		document.documentElement.style.fontSize = ratio + "px";
-	}
-
-	document.addEventListener("DOMContentLoaded", rem);
-
-	window.onresize = rem;
-})(window);
+	if (!doc.addEventListener) return;
+	win.addEventListener(resizeEvt, recalc, false);
+	doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
