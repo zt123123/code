@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/app.min.css">
+    <script src="js/rem.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="back">&lt;返回</div>
+        <h1>特价机票</h1>
+        <div class="menu">···</div>
+    </header>
+    <main>
+        <div class="carousel"></div>
+        <div class="tab">
+            <div id="trip" class="tab-btn cleanfix">
+                <section class="trip active">
+                    <div class="single">单程</div>
+                </section>
+                <section class="trip">
+                    <div class="double">往返</div>
+                </section>
+            </div>
+            <div class="tab-content">
+                <div class="opt-panel-one">
+                    <div class="rect">
+                        <div class="line"></div>
+                    </div>
+                    <ul>
+                        <li><input type="text" placeholder="从哪里出发?"></li>
+                        <li><input type="text" placeholder="到哪里去?"></li>
+                        <li><input type="text" placeholder="出发日期"></li>
+                    </ul>
+                </div>
+                <div class="opt-panel-two">
+                    <ul>
+                        <li><span>舱位</span><span>请选择&gt;</span></li>
+                        <li><span>人数</span><span>请选择&gt;</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="submit">提交询价</div>
+    </main>
+    <footer>
+        <ul id="nav">
+            <li class="active">订专车</li>
+            <li>订机票</li>
+            <li>我的</li>
+        </ul>
+    </footer>
+</div>
+<script src="js/util.min.js"></script>
+<script src="js/app.min.js"></script>
+</body>
+</html>

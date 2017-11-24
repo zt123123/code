@@ -1,0 +1,222 @@
+.px2rem(@name, @rem) {
+    @{name}: @rem / 2rem;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+  font-family: PingFangSC-Semibold;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  header {
+    position: relative;
+    .px2rem(height, 5.5);
+    background-image: linear-gradient(-180deg, #2D2C33 0%, rgba(24, 23, 26, 0.85) 98%);
+    .back, .menu {
+      position: absolute;
+      .px2rem(line-height, 5.5);
+      text-align: center;
+    }
+    .back {
+      font-size: 30/32rem;
+      left: 0;
+      top: 0;
+      .px2rem(width, 8);
+      .px2rem(height, 5.5);
+    }
+    h1 {
+      .px2rem(height, 5.5);
+      .px2rem(line-height, 5.5);
+      font-size: 1rem;
+      text-align: center;
+    }
+    .menu {
+      top: 0;
+      right: 0;
+      .px2rem(width, 5.5);
+      .px2rem(height, 5.5);
+    }
+  }
+  main {
+    .carousel {
+      .px2rem(height, 7.5);
+      background-color: #9B9B9B;
+    }
+    .tab {
+      .tab-btn {
+        background-color: #fff;
+        .px2rem(height, 5);
+        margin-bottom: 1rem;
+        font-size: 28/32rem;
+        color: #999;
+        letter-spacing: 0;
+        .trip {
+          .px2rem(padding-top, 1.25);
+          .px2rem(padding-bottom, 1.25);
+          text-align: center;
+          float: left;
+          width: 50%;
+          &.active {
+            color: #444;
+            border-bottom: 1px solid #2FD5A9;
+          }
+        }
+        .single {
+          border-right: 1px solid #ccc;
+        }
+      }
+      .tab-content {
+        .opt-panel-one {
+          position: relative;
+          background-color: #fff;
+          .px2rem(height, 18.75);
+          .px2rem(margin-bottom, 1.88);
+          .rect {
+            width: 5.44/2rem;
+            .px2rem(height, (18.65/3)*2);
+            padding-top: 2.3/2rem;
+            padding-left: 2.38/2rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #fff;
+            .line {
+              position: relative;
+              top: 1.75/2rem;
+              left: 1.75/4rem;
+              width: 0.19/2rem;
+              height: 4.31/2rem;
+              background-color: #4a4a4a;
+              &::before, &::after {
+                padding: 0.38/2rem;
+                content: ' ';
+                position: absolute;
+                left: -1.75/4rem+(0.19/4rem);
+                width: 1.75/2rem;
+                height: 1.75/2rem;
+                border: 1px solid #4A4A4A;
+                border-radius: 4px;
+                background-origin: content-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                background-size: 0.5rem 0.5rem;
+              }
+              &::before {
+                top: -1.75/2rem;
+                background: #2FD5A9;
+              }
+              &:after {
+                bottom: -1.75/2rem;
+                background: #FF9D8A;
+              }
+            }
+          }
+          li {
+            font-size: 28/32rem;
+            color: #aaa;
+            letter-spacing: 0;
+            .px2rem(height, 18.75/3);
+            .px2rem(line-height, 18.75/3);
+            .px2rem(padding-left, 5.44);
+            border-bottom: 1px solid #F0F0F0;
+            &:nth-of-type(3) {
+              border-bottom: none;
+              background: url(../img/calendar-icon.png) no-repeat 2.38/2rem center;
+              -webkit-background-size: 1.75/2rem 1.75/2rem;
+              background-size: 1.75/2rem 1.75/2rem;
+            }
+            input {
+              outline: none;
+              border: none;
+            }
+          }
+        }
+        .opt-panel-two {
+          background-color: #fff;
+          li {
+            padding: 0 1.69/2rem 0 5.31/2rem;
+            color: #444;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 28/32rem;
+            .px2rem(height, 12.75/2);
+            .px2rem(line-height, 12.75/2);
+            background: 1.69/2rem center no-repeat;
+            -webkit-background-size: 2.75/2rem 2.75/2rem;
+            background-size: 2.75/2rem 2.75/2rem;
+            &:nth-of-type(1) {
+              background-image: url(../img/icon_shapes.png);
+            }
+            &:nth-of-type(2) {
+              background-image: url(../img/people.png);
+            }
+            span:nth-of-type(2) {
+              color: #aaa;
+              font-size: 24/32rem;
+              float: right;
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+    .submit {
+      font-size: 1rem;
+      color: #fff;
+      letter-spacing: 0;
+      margin: 1.88/2rem auto 2.5/2rem;
+      .px2rem(width, 36.25);
+      .px2rem(height, 4.56);
+      .px2rem(line-height, 4.56);
+      background: #2FD5A9;
+      border-radius: 4px;
+      text-align: center;
+    }
+  }
+  footer {
+    ul {
+      background-color: #fff;
+      .px2rem(height, 6.19);
+      border-top: 1px solid #b6b6b6;
+      display: flex;
+      align-items: center;
+      font-size: 30/32rem;
+      color: #666;
+      letter-spacing: 0;
+      li {
+        border-right: 1px solid #b6b6b6;
+        text-align: center;
+        padding-left: 5.75/2rem;
+        flex: 1;
+        height: 100%;
+        .px2rem(line-height, 6.19);
+        align-items: center;
+        background: 1.69/2rem center no-repeat;
+        -webkit-background-size: 3.25/2rem 3.25/2rem;
+        background-size: 3.25/2rem 3.25/2rem;
+        &.active {
+          color: #494949;
+        }
+        &:nth-of-type(1) {
+          background-image: url(../img/icon_bcar.png);
+        }
+        &:nth-of-type(2) {
+          background-image: url(../img/icon_fligntq.png);
+        }
+        &:nth-of-type(3) {
+          background-image: url(../img/icon_rpeo.png);
+          border-right: none;
+        }
+      }
+    }
+  }
+}
