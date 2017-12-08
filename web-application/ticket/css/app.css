@@ -62,6 +62,7 @@ body {
   text-align: center;
   float: left;
   width: 50%;
+  height: 2.5rem;
 }
 .wrapper main .tab .tab-btn .trip.active {
   color: #444;
