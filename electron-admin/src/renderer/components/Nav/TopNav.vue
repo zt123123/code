@@ -49,8 +49,12 @@
         margin-right: 30px;
     }
 
-    .item sup {
-        top: 18px !important;
+    .el-header {
+        padding: 0;
+    }
+
+    .item {
+        margin-top: 15px;
     }
 
     .avatar {

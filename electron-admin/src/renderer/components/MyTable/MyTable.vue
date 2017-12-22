@@ -87,6 +87,17 @@
                 }],
                 multipleSelection: []
             }
+        },
+        methods:{
+            handleSelectionChange(){
+                console.log("handleSelectionChange");
+            },
+            handleEdit(index,row){
+                console.log(index,row);
+            },
+            handleDelete(index,row){
+                console.log(index,row);
+            }
         }
     }
 </script>
