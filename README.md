@@ -1,6 +1,6 @@
-# 这里记录了学习过程中的一些demo，每个文件夹都是一个知识点。
+# 这里记录了平时学习过程中的一些demo
 
 # 自我介绍
-我是一名大学生，刚参加工作不久，现在在一家创业公司工作，担任前端开发工作。
+在一家创业公司工作，担任前端开发工作。
 ## 技术栈
-> Vue，React，NodeJs，HTML5，CSS3，MongoDB
+> HTML5，CSS3，JS，Vue，React，NodeJs，MongoDB
