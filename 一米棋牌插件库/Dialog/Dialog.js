@@ -14,7 +14,7 @@
 
 var Dialog = (function(window, document) {
 	var cssObj = {
-		wrapperCss: "font-size: 14px;background-color: #fff;max-width:300px;position: absolute;left: 50%;top: 50%;z-index: 999999;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);width: 65%;padding: 10px;background-color: #fff;text-align: center;border: 1px solid #eee;border-radius: 10px;-webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);",
+		wrapperCss: "font-size: 14px;background-color: #fff;max-width:300px;position: absolute;left: 50%;top: 50%;z-index: 999999;-webkit-transition:all 0.5s;transition:all 0.5s;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);width: 65%;padding: 10px;background-color: #fff;text-align: center;border: 1px solid #eee;border-radius: 10px;-webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);",
 		titleCss: "padding: 5px 0;border-bottom: 1px solid #ebeef5;",
 		bodyCss: "padding: 5px 0;font-size: 16px;",
 		btnCancelCss: "color: #606266;border-color: #dcdfe6;border: 1px solid #dcdfe6;border-radius: 5px;padding: 5px 10px;outline:none;",
@@ -23,6 +23,7 @@ var Dialog = (function(window, document) {
 
 	function Dialog(title, content, cancelFn, sureFn, type) {
 
+		//单例模式
 		if(Dialog.unique !== undefined) {
 			Dialog.unique.show();
 			Dialog.unique.autoHide();
@@ -98,7 +99,7 @@ var Dialog = (function(window, document) {
 	}
 
 	Dialog.prototype.show = function(callback) {
-		this.wrapperDiv.style.display = "block";
+		this.wrapperDiv.style.opacity = 1;
 		this.wrapperDiv.style.zIndex = "9999999";
 		callback && callback();
 
@@ -106,7 +107,7 @@ var Dialog = (function(window, document) {
 	}
 
 	Dialog.prototype.hide = function(callback) {
-		this.wrapperDiv.style.display = "none";
+		this.wrapperDiv.style.opacity = 0;
 		this.wrapperDiv.style.zIndex = "-999";
 		callback && callback();
 
