@@ -13,8 +13,23 @@
  */
 
 var Dialog = (function(window, document) {
+	var cssObj = {
+		wrapperCss: "font-size: 14px;background-color: #fff;max-width:300px;position: absolute;left: 50%;top: 50%;z-index: 999999;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);width: 65%;padding: 10px;background-color: #fff;text-align: center;border: 1px solid #eee;border-radius: 10px;-webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);",
+		titleCss: "padding: 5px 0;border-bottom: 1px solid #ebeef5;",
+		bodyCss: "padding: 5px 0;font-size: 16px;",
+		btnCancelCss: "color: #606266;border-color: #dcdfe6;border: 1px solid #dcdfe6;border-radius: 5px;padding: 5px 10px;outline:none;",
+		btnSureCss: "margin-left:20px;color: #fff;background-color: #409eff;border: 1px solid;border-color: #409eff;border-radius: 5px;padding: 5px 10px;outline:none;"
+	};
+
 	function Dialog(title, content, cancelFn, sureFn, type) {
 
+		if(Dialog.unique !== undefined) {
+			Dialog.unique.show();
+			Dialog.unique.autoHide();
+			return Dialog.unique;
+		}
+
+		this.timer = null;
 		this.wrapperDiv = document.createElement("div");
 		this.titleDiv = document.createElement("div");
 		this.bodyDiv = document.createElement("div");
@@ -31,15 +46,18 @@ var Dialog = (function(window, document) {
 
 		this.init();
 		this.bindEvent();
+
+		Dialog.unique = this;
 	}
 
 	Dialog.prototype.init = function() {
-		this.wrapperDiv.style.cssText = "font-size: 14px;background-color: #fff;max-width:300px;position: absolute;left: 50%;top: 50%;z-index: 999999;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);width: 65%;padding: 10px;background-color: #fff;text-align: center;border: 1px solid #eee;border-radius: 10px;-webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);"
-		this.titleDiv.style.cssText = "padding: 5px 0;border-bottom: 1px solid #ebeef5;";
-		this.bodyDiv.style.cssText = "padding: 5px 0;font-size: 16px;";
 
-		this.btnCancel.style.cssText = "color: #606266;border-color: #dcdfe6;border: 1px solid #dcdfe6;border-radius: 5px;padding: 5px 10px;outline:none;";
-		this.btnSure.style.cssText = "margin-left:20px;color: #fff;background-color: #409eff;border: 1px solid;border-color: #409eff;border-radius: 5px;padding: 5px 10px;outline:none;";
+		this.wrapperDiv.style.cssText = cssObj.wrapperCss
+		this.titleDiv.style.cssText = cssObj.titleCss;
+		this.bodyDiv.style.cssText = cssObj.bodyCss;
+
+		this.btnCancel.style.cssText = cssObj.btnCancelCss;
+		this.btnSure.style.cssText = cssObj.btnSureCss
 
 		this.titleDiv.innerHTML = this.title;
 		this.bodyDiv.innerHTML = this.content;
@@ -53,8 +71,16 @@ var Dialog = (function(window, document) {
 		this.optDiv.appendChild(this.btnSure);
 
 		document.body.appendChild(this.wrapperDiv);
-
+		this.autoHide();
 		return this;
+	}
+
+	Dialog.prototype.autoHide = function() {
+		var _this = this;
+		clearTimeout(this.timer);
+		this.timer = setTimeout(function() {
+			_this.hide();
+		}, 5000)
 	}
 
 	Dialog.prototype.bindEvent = function() {
@@ -89,4 +115,4 @@ var Dialog = (function(window, document) {
 
 	window.Dialog = Dialog;
 	return Dialog;
-})(window, document);
+})(this, document);
