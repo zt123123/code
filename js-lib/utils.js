@@ -327,7 +327,7 @@ var utils = (function(window) {
 		listToArray: listToArray, //类数组转换为数组
 		trim: trim, //去除字符串首尾空格
 		jsonParse: jsonParse, //格式化JSON
-		offset: offset, //类数组转换为数组
+		offset: offset, //获取元素偏移量
 		children: children, //获取元素所有子节点
 		prev: prev, //获取哥哥节点
 		prevAll: prevAll, //获取所有哥哥节点
