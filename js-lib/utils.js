@@ -31,7 +31,6 @@ var utils = (function(window) {
 		} else {
 			return val;
 		}
-
 	}
 
 	function listToArray(likeAry) {
