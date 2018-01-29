@@ -17,7 +17,7 @@ var PopLayer = (function(window, document) {
 
 		//单例模式
 		if(PopLayer.unique !== undefined) {
-			this.show();
+			PopLayer.unique.show();
 			PopLayer.unique.contentDiv.innerHTML = this.content;
 			return PopLayer.unique;
 		}
@@ -30,7 +30,7 @@ var PopLayer = (function(window, document) {
 	PopLayer.prototype.init = function() {
 
 		this.wrapperDiv.style.cssText = "position: absolute;z-index: 9999999;left: 0;top: 0;right: 0;bottom: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.6);"
-		this.contentDiv.style.cssText = "font-size: 20px;color:#fff;position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);";
+		this.contentDiv.style.cssText = "font-size: 20px;color:#fff;position: absolute;width:100%;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);";
 
 		this.contentDiv.innerHTML = this.content;
 		this.wrapperDiv.appendChild(this.contentDiv);
