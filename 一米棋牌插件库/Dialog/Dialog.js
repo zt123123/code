@@ -22,14 +22,6 @@ var Dialog = (function(window, document) {
 	};
 
 	function Dialog(title, content, cancelFn, sureFn, type) {
-
-		//单例模式
-		if(Dialog.unique !== undefined) {
-			Dialog.unique.show();
-			Dialog.unique.autoHide();
-			return Dialog.unique;
-		}
-
 		this.timer = null;
 		this.wrapperDiv = document.createElement("div");
 		this.titleDiv = document.createElement("div");
@@ -44,6 +36,17 @@ var Dialog = (function(window, document) {
 		this.cancelFn = cancelFn || function() {};
 		this.sureFn = sureFn || function() {};
 		this.type = type || 0;
+
+		console.log(this.title)
+
+		//单例模式
+		if(Dialog.unique !== undefined) {
+			Dialog.unique.show();
+			Dialog.unique.autoHide();
+			Dialog.unique.titleDiv.innerHTML = this.title;
+			Dialog.unique.bodyDiv.innerHTML = this.content;
+			return Dialog.unique;
+		}
 
 		this.init();
 		this.bindEvent();
