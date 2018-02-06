@@ -1,0 +1,8 @@
+<div>
+  <h1>首页</h1>
+  <input (keyup.enter)="handleClick(inp,$event)" type="text" value="" #inp>
+  <input type="button" (click)="handleClick(inp,$event)"  value="click">
+  <ul>
+    <li *ngFor="let item of list" >{{item}}</li>
+  </ul>
+</div>
