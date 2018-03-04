@@ -1,0 +1,53 @@
+/**index.wxss**/
+
+.page__bd {
+  padding: 10rpx;
+}
+
+.btn {
+  width: 206rpx;
+  margin: 0 auto;
+}
+
+.weui-grid__icon {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.weui-grids {
+  border-radius: 10rpx;
+}
+
+.hot-wrapper {
+  padding: 10rpx;
+  border-radius: 10rpx;
+  border: solid 1px #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hot {
+  flex: 1;
+  text-align: center;
+}
+
+.round-btn {
+  border: 1px solid #979797;
+  border-radius: 20rpx;
+}
+
+.friend-play {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.poster {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 300rpx;
+}

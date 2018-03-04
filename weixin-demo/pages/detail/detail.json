@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "dialog": "/component/custom/layer/layer"
+  },
+  "navigationBarTitleText": "一米棋牌红包"
+}

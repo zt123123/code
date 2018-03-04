@@ -1,0 +1,9 @@
+<!--component/custom/layer.wxml-->
+<view class='wx_dialog_container' hidden="{{!isShow}}">
+  <view class='wx-mask'></view>
+  <view class='wx-dialog'>
+    <text class='wx-close' catchtap='_cancelEvent'></text>
+    <view class='wx-dialog-title'>{{ title }}</view>
+    <slot></slot>
+  </view>
+</view>

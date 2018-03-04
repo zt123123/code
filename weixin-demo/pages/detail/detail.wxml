@@ -1,0 +1,37 @@
+<view class='container'>
+  <text class='record' bindtap="showLayer">红包记录</text>
+  <image class='bg-img' src='/assets/img/bg.jpg'></image>
+  <image class='slogo' src='/assets/img/slogo.png'></image>
+  <image class='red-paper' src='/assets/img/redpaperbg.png'></image>
+  <view class='paper-desc'>红包内含<text class='gold-font'>1-200元现金红包</text> （限量）和<text class='gold-font'>棋牌新春礼包</text></view>
+  <image class='red-paper-btn' bindtap='openPaper' src='{{btnSrc}}'></image>
+
+  <view class='tip'>
+    <text>还差<text class='gold-font'>3人</text>即可开启红包，邀请好友来拆</text>
+  </view>
+
+  <view class='invite'>
+    <button open-type='share' style='position: absolute;background: transparent' class='invite-btn'></button>
+    <image class='invite-btn' src='/assets/img/invite.png'></image>
+  </view>
+  <view class='rule'>
+    <text bindtap="showLayer">活动规则</text>
+  </view>
+
+  <view class='member'>
+    <view bindtap='addUser' wx:key wx:for="{{list}}">
+      <view class='avatar avatar-bg'>
+        <image class='avatar' src='{{imgSrc}}'></image>
+      </view>
+      <view class='nickname' wx:if='{{nickName}}'>{{nickName}}</view>
+    </view>
+  </view>
+
+  <view class="container">
+    <dialog id='layer' title='我是标题' bindcancelEvent="_cancelEvent">
+      <view wx:key wx:for="{{list}}">{{item.name}}</view>
+    </dialog>
+  </view>
+
+  <!-- <button type='primary' open-type='share'>分享</button> -->
+</view>

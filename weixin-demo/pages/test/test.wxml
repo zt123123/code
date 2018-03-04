@@ -1,0 +1,5 @@
+	<view class="radius">
+		<view class="title"></view>
+		<view class="content"></view>
+		<view class="footer"></view>
+	</view>

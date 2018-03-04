@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/test/test",
+    "pages/index/index",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1a1a1a",
+    "navigationBarTextStyle": "fff",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#a32926"
+  }
+}

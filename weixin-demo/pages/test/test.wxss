@@ -1,0 +1,52 @@
+/* pages/detail/detail.wxss */
+
+.radius {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+}
+
+.content {
+  height: 200px;
+  background-color: #f00;
+}
+
+.title, .footer {
+  background-color: #f00;
+  position: relative;
+  width: 200px;
+  height: 20rpx;
+}
+
+.title::before, .title::after, .footer::before, .footer::after {
+  content: "";
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.title::before {
+  left: 0;
+  top: 0;
+  background-image: radial-gradient(20rpx at 0 0, #fff59f 20rpx, transparent 20rpx);
+}
+
+.title::after {
+  right: 0;
+  top: 0;
+  background-image: radial-gradient(20rpx at 20rpx 0, #fff59f 20rpx, transparent 20rpx);
+}
+
+.footer::before {
+  left: 0;
+  top: 0;
+  background-image: radial-gradient(20rpx at 0 20rpx, #fff59f 20rpx, transparent 20rpx);
+}
+
+.footer::after {
+  right: 0;
+  top: 0;
+  background-image: radial-gradient(20rpx at 20rpx 20rpx, #fff59f 20rpx, transparent 20rpx);
+}
