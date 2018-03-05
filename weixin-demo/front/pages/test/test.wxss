@@ -5,18 +5,18 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 200px;
+  width: 400rpx;
 }
 
 .content {
-  height: 200px;
+  height: 400rpx;
   background-color: #f00;
 }
 
 .title, .footer {
   background-color: #f00;
   position: relative;
-  width: 200px;
+  width: 400rpx;
   height: 20rpx;
 }
 

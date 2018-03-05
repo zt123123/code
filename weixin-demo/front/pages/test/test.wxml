@@ -1,0 +1,11 @@
+<button type='primary' size='mini' bindtap='reqData'>获取openid</button>
+<button type='primary' size='mini' bindtap='upload'>上传图片</button>
+<button type='primary' size='mini' bindtap='download'>下载图片</button>
+<image mode='aspectFit' src='{{imgSrc}}'></image>
+<view>下载的图片</view>
+<image mode='aspectFit' src='{{downImg}}'></image>
+<view class="radius">
+  <view class="title"></view>
+  <view class="content"></view>
+  <view class="footer"></view>
+</view>
