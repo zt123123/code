@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0"><title>一米棋牌</title><style>body {
+      font-size: 16px;
+    }</style><link href=/static/css/app.6aafded37c6ab418dedb96e9956530af.css rel=stylesheet></head><body><div id=app-box></div><script>(function (doc, win) {
+      var docEl = doc.documentElement, //设备宽度
+        rem = 100, //1rem代表100px
+        desW = 750, //设计稿宽度
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= desW) {
+            docEl.style.fontSize = rem + "px";
+          } else {
+            docEl.style.fontSize = rem * (clientWidth / desW) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);</script><script type=text/javascript src=/static/js/manifest.d44941c34a4bf2f50dab.js></script><script type=text/javascript src=/static/js/vendor.66ee503324c786378c4f.js></script><script type=text/javascript src=/static/js/app.e7aae7c2ecaa0339c645.js></script></body></html>
