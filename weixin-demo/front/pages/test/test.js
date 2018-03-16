@@ -8,7 +8,8 @@ Page
      */
     data: {
       imgSrc: "",
-      downImg: ""
+      downImg: "",
+      isShow: false
     },
 
     /**
@@ -18,6 +19,10 @@ Page
       wx.setNavigationBarTitle({
         title: '领取红包',
       })
+    },
+    jump() {
+      console.log(1111111)
+      this.setData({ isShow: true })
     },
     reqData() {
 

@@ -8,4 +8,10 @@
   <view class="title"></view>
   <view class="content"></view>
   <view class="footer"></view>
+  <view>
+    <image bindtap='jump' style='width:100px;height:100px;' src='https://qr.api.cli.im/qr?data=http%253A%252F%252Fwww.baidu.com&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&size=280&kid=cliim&key=1d654768e833ea12c3e7d7c2873ec606'></image>
+  </view>
+  <view wx:if="{{isShow}}">
+    <web-view src="https://sso.dinghuo123.com/app/apply1?rc=00236"></web-view>
+  </view>
 </view>
