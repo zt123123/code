@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/vue-router.min.js"></script>
+    <style>
+        #app {
+
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+
+        table {
+            margin: 50px auto;
+            text-align: center;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        tr,
+        td,
+        th {
+            padding: 10px;
+            border: 1px solid #000;
+
+        }
+
+        .w100 {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <table v-if="list.length!==0">
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>小计</th>
+                <th>操作</th>
+            </tr>
+            <tr v-for="(item,index) in list">
+                <td>{{index+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.gender}}</td>
+                <td>{{item.price}}</td>
+                <td>
+                    <button @click="reduce(index)">-</button>
+                    <input class="w100" type="text" v-model="item.count">
+                    <button @click="add(index)">+</button>
+                </td>
+                <!-- <td>{{amount(item.price,item.count)}}</td> -->
+                <td>{{item.price*item.count}}</td>
+                <td>
+                    <button @click="del(index)">删除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>总计</td>
+                <td colspan="6">{{totals}}</td>
+                <td>
+                    <button @click="remove">清空购物车</button>
+                </td>
+            </tr>
+        </table>
+
+        <p v-if="list.length==0" v-bg>当前购物车为空</p>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            directives: {
+                bg: {
+                    bind: function (el) {
+                        console.log(arguments);
+                        console.log(this);
+                        
+                        el.style.backgroundColor = "#f00";
+                    }
+                }
+            },
+            computed: {
+                totals: function () {
+                    this.total = 0
+                    this.list.forEach(item => {
+                        this.total += parseInt(item.price * item.count)
+                    });
+
+                    return this.total
+                }
+            },
+            data() {
+                return {
+                    total: 0,
+                    list: [
+                        {
+                            name: "aaa",
+                            age: 22,
+                            gender: 0,
+                            price: 12,
+                            count: 2
+                        }, {
+                            name: "fds",
+                            age: 23,
+                            gender: 1,
+                            price: 12,
+                            count: 20
+                        }, {
+                            name: "erfw",
+                            age: 21,
+                            gender: 1,
+                            price: 100,
+                            count: 1
+                        }, {
+                            name: "nhgf",
+                            age: 22,
+                            gender: 0,
+                            price: 20,
+                            count: 2
+                        }, {
+                            name: "rgefd",
+                            age: 20,
+                            gender: 0,
+                            price: 2,
+                            count: 12
+                        }, {
+                            name: "dbv",
+                            age: 23,
+                            gender: 1,
+                            price: 15,
+                            count: 3
+                        }]
+                }
+            },
+            mounted: function () {
+
+            },
+            methods: {
+                del(index) {
+                    if (confirm("确定删除吗")) {
+                        this.list.splice(index, 1)
+                    }
+                },
+                add(index) {
+                    this.list[index].count++
+                },
+                reduce(index) {
+                    this.list[index].count--
+                },
+                remove() {
+                    this.list = []
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
